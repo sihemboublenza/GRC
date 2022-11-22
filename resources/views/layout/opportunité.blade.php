@@ -178,14 +178,7 @@
           <!--Row-->
 
           <!-- Documentation Link -->
-          <div class="row">
-            <div class="col-lg-12">
-              <p>DataTables is a third party plugin that is used to generate the demo table below. For more information
-                about DataTables, please visit the official <a href="https://datatables.net/" target="_blank">DataTables
-                  documentation.</a></p>
-            </div>
-          </div>
-
+         
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">

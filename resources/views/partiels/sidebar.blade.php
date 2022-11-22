@@ -16,19 +16,6 @@
         Features
       </div>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
-          aria-expanded="true" aria-controls="collapseBootstrap">
-          <i class="far fa-fw fa-window-maximize"></i>
-          <span>Bootstrap UI</span>
-        </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bootstrap UI</h6>
-            <a class="collapse-item" href="{{url('layout.modals')}}">Modals</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
@@ -42,23 +29,54 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-          aria-controls="collapseTable">
+<li class="nav-item">
+        <a class="nav-link" href="{{url('layout.prospect')}}">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
+          <span>prospects</span>
         </a>
-        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="{{url('layout.prospect')}}">Prospects</a>
-            <a class="collapse-item" href="{{url('layout.opportunité')}}">Oportunités</a>
-            <a class="collapse-item" href="{{url('layout.produit')}}">Produits</a>
-
-
-          </div>
-        </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('layout.produit')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Clients</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('layout.produit')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Contacts</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('layout.opportunité')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Oportunités</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('layout.produit')}}">
+          <i class="fa fa-calendar"></i>
+          <span>RDV</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('layout.produit')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Produits</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('layout.produit')}}">
+          <i class="fas fa-users fa-sm fa-fw mr-2"></i>
+          <span>utilisateur</span>
+        </a>
+      </li>
+      
+      
       <li class="nav-item">
         <a class="nav-link" href="{{url('layout.colors')}}">
           <i class="fas fa-fw fa-palette"></i>
@@ -67,24 +85,8 @@
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
-      </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-          aria-controls="collapsePage">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="{{url('layout.login')}}">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="{{url('layout.page_blanc')}}">Blank Page</a>
-          </div>
-        </div>
-      </li>
+        Charts
+     
       <li class="nav-item">
         <a class="nav-link" href="{{url('layout.charts')}}">
           <i class="fas fa-fw fa-chart-area"></i>

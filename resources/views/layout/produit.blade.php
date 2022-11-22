@@ -88,72 +88,12 @@
               </div>
             </div>
             <!-- DataTable with Hover -->
-            <div class="col-lg-12">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">DataTables with Hover</h6>
-                </div>
-                <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush table-hover" id="dataTableHover">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>Nome</th>
-                        <th>Description</th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
-                    </thead>
-                    
-                    <tbody>
-                     
-                      <tr>
-                        <td>Martena Mccray</td>
-                        <td>Post-Sales support</td>
-                        <td>Edinburgh</td>
-                        <td>46</td>
-                      </tr>
-                      
-                      
-                      <tr>
-                        <td>Jonas Alexander</td>
-                        <td>Developer</td>
-                        <td>San Francisco</td>
-                        <td>30</td>
-                      </tr>
-                      <tr>
-                        <td>Shad Decker</td>
-                        <td>Regional Director</td>
-                        <td>Edinburgh</td>
-                        <td>51</td>
-                      </tr>
-                      <tr>
-                        <td>Michael Bruce</td>
-                        <td>Javascript Developer</td>
-                        <td>Singapore</td>
-                        <td>29</td>
-                      </tr>
-                      <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
-                        <td>27</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <!--Row-->
 
           <!-- Documentation Link -->
-          <div class="row">
-            <div class="col-lg-12">
-              <p>DataTables is a third party plugin that is used to generate the demo table below. For more information
-                about DataTables, please visit the official <a href="https://datatables.net/" target="_blank">DataTables
-                  documentation.</a></p>
-            </div>
-          </div>
-
+        
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
