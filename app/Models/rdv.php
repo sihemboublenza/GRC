@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class rdv extends Model
+{
+      protected $fillable =[
+	  'id_rdv',
+	  'date',
+	  'compte_rendu',
+	  ];
+}
