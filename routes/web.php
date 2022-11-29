@@ -39,6 +39,7 @@ Route::get('/terms', function () {
 
 Route::get('/client/profile', function () {
     return view('/client/profile');
+});
 Route::get('/layout.index', function () {
     return view('layout.index');
 });
