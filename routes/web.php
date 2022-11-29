@@ -36,8 +36,8 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
-Route::get('/admin', function () {
-    return view('admin_template');
+Route::get('/client/profile', function () {
+    return view('/client/profile');
 });
 
 
