@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SampleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/log-in', function () {
-    return view('log-in');
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/article', function () {
     return view('article');
 });
 
-Route::get('/privancy', function () {
+Route::get('/privacy', function () {
     return view('privacy');
 });
 
-Route::get('/sign-up', function () {
-    return view('sign-up');
+Route::get('/signup', function () {
+    return view('signup');
 });
 
 Route::get('/terms', function () {
@@ -37,11 +38,24 @@ Route::get('/terms', function () {
 });
 
 
+Route::controller(SampleController::class)->group(function(){
+
+    Route::get('login', 'login')->name('login');
+
+    Route::get('signup', 'register')->name('signup');
+
+    Route::post('validate_signup', 'validate_signup')->name('sample.validate_signup');
+
+    Route::get('logout', 'logout')->name('logout');
+
+    Route::post('validate_login', 'validate_login')->name('sample.validate_login');
+
+    Route::get('dashboard', 'dashboard')->name('dashboard');
+});
+
+
 Route::get('/client/profile', function () {
     return view('/client/profile');
-});
-Route::get('/layout.index', function () {
-    return view('layout.index');
 });
 
 Route::get('/layout.modals', function () {
@@ -54,6 +68,7 @@ Route::get('/layout.form_basic', function () {
 Route::get('/layout.form_avancé', function () {
     return view('layout.form_avancé');
 });
+
 Route::get('/layout.prospect', function () {
     return view('layout.prospect');
 });
@@ -82,8 +97,3 @@ Route::get('/layout.opportunité', function () {
 Route::get('/layout.produit', function () {
     return view('layout.produit');
 });
-
-
-
-
-

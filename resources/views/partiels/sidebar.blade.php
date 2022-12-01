@@ -13,7 +13,7 @@
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Tables
       </div>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
@@ -32,7 +32,7 @@
 <li class="nav-item">
         <a class="nav-link" href="{{url('layout.prospect')}}">
           <i class="fas fa-fw fa-table"></i>
-          <span>prospects</span>
+          <span>Prospects</span>
         </a>
       </li>
 
@@ -52,14 +52,14 @@
       <li class="nav-item">
         <a class="nav-link" href="{{url('layout.opportunité')}}">
           <i class="fas fa-fw fa-table"></i>
-          <span>Oportunités</span>
+          <span>Opportunités</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('layout.produit')}}">
           <i class="fa fa-calendar"></i>
-          <span>RDV</span>
+          <span>Rendez-Vous</span>
         </a>
       </li>
       <li class="nav-item">
@@ -72,27 +72,8 @@
       <li class="nav-item">
         <a class="nav-link"  href="{{url('layout.produit')}}">
           <i class="fas fa-users fa-sm fa-fw mr-2"></i>
-          <span>utilisateur</span>
-        </a>
-      </li>
-      
-      
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('layout.colors')}}">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>UI Colors</span>
+          <span>Utilisateurs</span>
         </a>
       </li>
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Charts
-     
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('layout.charts')}}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
     </ul>

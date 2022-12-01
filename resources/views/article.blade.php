@@ -74,7 +74,7 @@
                         </li>
                     </ul>
                     <span class="nav-item">
-                        <a class="btn-outline-sm" href="{{url('log-in')}}">Log in</a>
+                        <a class="btn-outline-sm" href="{{url('login')}}">Log in</a>
                     </span>
                 </div> <!-- end of navbar-collapse -->
             </div> <!-- end of container -->
