@@ -58,42 +58,50 @@ Route::get('/client/profile', function () {
     return view('/client/profile');
 });
 
-Route::get('/layout.modals', function () {
-    return view('layout.modals');
+Route::get('/admin.modals', function () {
+    return view('admin.modals');
 });
-Route::get('/layout.form_basic', function () {
-    return view('layout.form_basic');
-});
-
-Route::get('/layout.form_avancé', function () {
-    return view('layout.form_avancé');
+Route::get('/admin.form_basic', function () {
+    return view('admin.form_basic');
 });
 
-Route::get('/layout.prospect', function () {
-    return view('layout.prospect');
+Route::get('/admin.form_avancé', function () {
+    return view('admin.form_avancé');
 });
 
-Route::get('/layout.colors', function () {
-    return view('layout.colors');
+Route::get('/admin.prospect', function () {
+    return view('admin.prospect');
 });
 
-Route::get('/layout.login', function () {
-    return view('layout.login');
+Route::get('/admin.colors', function () {
+    return view('admin.colors');
 });
 
-Route::get('/layout.page_blanc', function () {
-    return view('layout.page_blanc');
+Route::get('/admin.login', function () {
+    return view('admin.login');
+});
+
+Route::get('/admin.page_blanc', function () {
+    return view('admin.page_blanc');
 });
 
 
-Route::get('/layout.charts', function () {
-    return view('layout.charts');
+Route::get('/admin.charts', function () {
+    return view('admin.charts');
 });
 
-Route::get('/layout.opportunité', function () {
-    return view('layout.opportunité');
+Route::get('/admin.opportunité', function () {
+    return view('admin.opportunité');
 });
 
-Route::get('/layout.produit', function () {
-    return view('layout.produit');
+Route::get('/admin.produit', function () {
+    return view('admin.produit');
+});
+
+Route::get('/admin.client', function () {
+    return view('admin.client');
+});
+
+Route::get('/admin.edit', function () {
+    return view('admin.edit');
 });

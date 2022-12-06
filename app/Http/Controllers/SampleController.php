@@ -62,7 +62,7 @@ class SampleController extends Controller
     {
         if(Auth::check())
         {
-            return view('layout.index');
+            return view('admin.index');
         }
 
         return redirect('login')->with('success', 'Access denied');
