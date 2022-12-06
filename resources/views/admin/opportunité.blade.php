@@ -25,54 +25,33 @@
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
-                        <th>Nome</th>
-                        <th>Montont</th>
+                        <th>Nom</th>
+                        <th>Montant</th>
                         <th>Etape</th>
                         <th>Date de cloture</th>
                         <th>Client</th>
-                        <th>Produits</th>
-                        <th></th>
-                                                <th></th>
-
+                        <th/>
+                        <th/>
+                        <th/>
                       </tr>
                     </thead>
                    
                     <tbody>
                       <tr>
-                       <a href="" class="btn btn">ADD</a>
-
+                      <a href="" class="btn btn-success">ADD</a>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td><a href="" class="btn btn-success"> EDIT</a></td>
-                        <td><a href="" class="btn btn-danger"> DELETE</a></td>
-                      </tr>
+                      @foreach($opportunites as $opportunite)
                       <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                        <td><a href="" class="btn btn-success"> EDIT</a></td>
-                        <td><a href="" class="btn btn-danger"> DELETE</a></td>
+                      <td>{{$opportunite->nom_opp}}</td>
+                      <td>{{$opportunite->prenom_opp}}</td>
+                      <td>{{$opportunite->etape_opp}}</td>
+                      <td>{{$opportunite->date_de_cloture}}</td>
+                      <td>bezra bzf</td>
+                      <td><a href="" class="btn btn-primary"> SHOW </a></td>
+                      <td><a href="" class="btn btn-warning"> EDIT </a></td>
+                      <td><a href="" class="btn btn-danger"> DELETE </a></td>
                       </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                        <td><a href="" class="btn btn-success"> EDIT</a></td>
-                        <td><a href="" class="btn btn-danger"> DELETE</a></td>
-                      </tr>
-                      
-                      
+					            @endforeach
                     </tbody>
                   </table>
                 </div>

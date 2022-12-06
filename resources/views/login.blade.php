@@ -30,7 +30,7 @@
                             <p class="mb-4">You don't have a password? Then please <a class="blue" href="{{url('signup')}}">Sign Up</a></p>
 
                             <!-- Log In Form -->
-                            <form action="{{ route('sample.validate_login')}}" method="post">
+                            <form action="{{ route('authenticate.validate_login')}}" method="post">
                                 @csrf
                                 <div class="mb-4 form-floating">
                                     <input type="email" name="email" class="form-control" id="floatingInput">

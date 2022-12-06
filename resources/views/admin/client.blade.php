@@ -26,16 +26,28 @@
                    
                     <thead class="thead-light">
                       <tr>
-                        <th>Nom</th>
-                        <th></th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
+                        <th>Société</th>
+                        <th>Téléphone</th>
+                        <th>Adresse</th>
+                        <th>Site web</th>
+                        <th/>
+                        <th/>
                     </thead>                    
                     <tbody>
                       <tr>
                           <a href="" class="btn btn">ADD</a>
-
                       </tr>
+
+                      @foreach($clients as $client)
+                      <tr>
+                      <td>{{$client->societe_client}}</td>
+                      <td>{{$client->tel_client}}</td>
+                      <td>{{$client->adresse_client}}</td>
+                      <td>{{$client->siteweb_client}}</td>
+                      <td><a href="" class="btn btn-warning"> EDIT</a></td>
+                      <td><a href="" class="btn btn-danger"> DELETE</a></td>
+                      </tr>
+					  @endforeach
                       
                       
                     </tbody>

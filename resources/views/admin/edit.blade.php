@@ -13,7 +13,7 @@
 
 			<div role="tabpanel" class="tab-pane fade show active" id="home5" aria-labelledby="home-tab">
 
-				<form class="form-horizontal form-material" action="{{ route('teachers.update', $contact->id) }}"
+				<form class="form-horizontal form-material" action="{{ route('comemrcial.edit.client', $client->id) }}"
 							method="post">
 					@method('PUT')
 					@csrf
@@ -23,32 +23,32 @@
 
 						<div class="col-md-12 m-b-20">
 							<input type="text" class="form-control" placeholder="Matricule"
-										 value="{{$contact->matricule}}"
+										 value="{{$client->matricule}}"
 										 name="matricule">
 						</div>
 
 						<div class="col-md-12 m-b-20">
 							<input type="text" class="form-control" placeholder="Nom"
-										 value="{{$contact->nom}}"
+										 value="{{$client->societe_client}}"
 										 name="nom">
 						</div>
 
 						<div class="col-md-12 m-b-20">
 							<input type="text" class="form-control" placeholder="Prenom"
-										 value="{{$contact->prenom}}"
+										 value="{{$client->tel_client}}"
 										 name="prenom">
 						</div>
 
 						<div class="col-md-12 m-b-20">
 							<input type="email" class="form-control" placeholder="Email"
-										 value="{{$contact->email}}"
+										 value="{{$client->adresse_client}}"
 										 name="email">
 						</div>
 
 						<div class="col-md-12 m-b-20">
 							<span class="col-md-6">Date Naissance:</span>
 							<input type="date" class="form-control col-md-6"
-										 value="{{$contact->date_naissance}}"
+										 value="{{$client->siteweb_client}}"
 										 name="date_naissance">
 						</div>
 

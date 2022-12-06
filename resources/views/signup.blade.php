@@ -21,7 +21,7 @@
                             <p class="mb-4">Fill out the form below to sign up for the service. Already signed up? Then just <a class="blue" href="{{url('login')}}">Log In</a></p>
 
                             <!-- Sign Up Form -->
-                            <form action="{{route('sample.validate_signup')}}" method="post">
+                            <form action="{{route('authenticate.validate_signup')}}" method="post">
                                 @csrf
                                 <div class="mb-4 form-floating">
                                     <input type="email" class="form-control" name="email" id="floatingInput">

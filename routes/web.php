@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SampleController;
+use App\Http\Controllers\CommercialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +45,11 @@ Route::controller(SampleController::class)->group(function(){
 
     Route::get('signup', 'register')->name('signup');
 
-    Route::post('validate_signup', 'validate_signup')->name('sample.validate_signup');
+    Route::post('validate_signup', 'validate_signup')->name('authenticate.validate_signup');
 
     Route::get('logout', 'logout')->name('logout');
 
-    Route::post('validate_login', 'validate_login')->name('sample.validate_login');
+    Route::post('validate_login', 'validate_login')->name('authenticate.validate_login');
 
     Route::get('dashboard', 'dashboard')->name('dashboard');
 });
@@ -68,10 +69,21 @@ Route::get('/admin.form_basic', function () {
 Route::get('/admin.form_avancé', function () {
     return view('admin.form_avancé');
 });
-
-Route::get('/admin.prospect', function () {
-    return view('admin.prospect');
+Route::get('/admin.edit', function () {
+    return view('admin.edit');
 });
+
+Route::get('/admin.prospect', [
+    CommercialController::class,"prospect"
+]);
+
+Route::get('/admin.client', [
+    CommercialController::class,"client"
+]);
+
+Route::get('/admin.opportunité', [
+    CommercialController::class,"opportunite"
+]);
 
 Route::get('/admin.colors', function () {
     return view('admin.colors');
@@ -90,17 +102,11 @@ Route::get('/admin.charts', function () {
     return view('admin.charts');
 });
 
-Route::get('/admin.opportunité', function () {
-    return view('admin.opportunité');
-});
 
 Route::get('/admin.produit', function () {
     return view('admin.produit');
 });
 
-Route::get('/admin.client', function () {
-    return view('admin.client');
-});
 
 Route::get('/admin.edit', function () {
     return view('admin.edit');
