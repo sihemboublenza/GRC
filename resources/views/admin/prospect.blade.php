@@ -21,8 +21,8 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Procpects</h6>
                 </div>
-                <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush" id="dataTable">
+                <div class="p-3">
+                  <table class="table table-responsive overflow-auto" id="dataTable">
                     <thead class="thead-light">
                       <tr>
                         <th>Nome</th>
@@ -31,21 +31,27 @@
                         <th>Fonction</th>
                         <th>Email</th>
                         <th>Téléphone</th>
-                        <th>Adresse</th>
-                        <th>Site web</th>
                         <th>Statut</th>
-                        <th>Source</th>
+                        <th/>
+                        <th/>
+                        <th/>
                       </tr>
                     </thead>
                     <tbody>
-					@foreach($prospect as $p)
                       <tr>
-                        <td>{{$p->nom_p}}</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                      <a href="" class="btn btn-success">ADD</a>
+					@foreach($prospects as $prospect)
+                      <tr>
+                      <td>{{$prospect->nom_p}}</td>
+                      <td>{{$prospect->prenom_p}}</td>
+                      <td>{{$prospect->societe_p}}</td>
+                      <td>{{$prospect->fonction_p}}</td>
+                      <td>{{$prospect->email_p}}</td>
+                      <td>{{$prospect->tel_p}}</td>
+                      <td>{{$prospect->statut}}</td>
+                      <td><a href="" class="btn btn-sm btn-primary">SHOW</a></td>
+                      <td><a href="" class="btn btn-sm btn-warning"> EDIT</a></td>
+                      <td><a href="" class="btn btn-sm btn-danger"> DELETE</a></td>
                       </tr>
 					  @endforeach
                     </tbody>

@@ -5,11 +5,11 @@
 
   <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Produits</h1>
+            <h1 class="h3 mb-0 text-gray-800">Oportunités</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item">Tables</li>
-              <li class="breadcrumb-item active" aria-current="page">Produits</li>
+              <li class="breadcrumb-item active" aria-current="page">Oportunités</li>
             </ol>
           </div>
 
@@ -19,69 +19,39 @@
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Produits</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Oportunités</h6>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
-                   
                     <thead class="thead-light">
                       <tr>
-                        <th>Nome</th>
-                        <th>Description</th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
-                    </thead>                    
+                        <th>Nom</th>
+                        <th>Montant</th>
+                        <th>Etape</th>
+                        <th>Date de cloture</th>
+                        <th>Client</th>
+                        <th/>
+                        <th/>
+                        <th/>
+                      </tr>
+                    </thead>
+                   
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        
-                      </tr>
+                      <a href="" class="btn btn-success">ADD</a>
                       <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        
-                      </tr>
+                      @foreach($opportunites as $opportunite)
                       <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        
+                      <td>{{$opportunite->nom_opp}}</td>
+                      <td>{{$opportunite->prenom_opp}}</td>
+                      <td>{{$opportunite->etape_opp}}</td>
+                      <td>{{$opportunite->date_de_cloture}}</td>
+                      <td>bezra bzf</td>
+                      <td><a href="" class="btn btn-primary"> SHOW </a></td>
+                      <td><a href="" class="btn btn-warning"> EDIT </a></td>
+                      <td><a href="" class="btn btn-danger"> DELETE </a></td>
                       </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                      
-                      </tr>
-                      
+					            @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -89,11 +59,11 @@
             </div>
             <!-- DataTable with Hover -->
             
-          </div>
+              
           <!--Row-->
 
           <!-- Documentation Link -->
-        
+         
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">

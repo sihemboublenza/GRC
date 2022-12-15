@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SampleController;
+use App\Http\Controllers\CommercialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/log-in', function () {
-    return view('log-in');
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/article', function () {
     return view('article');
 });
 
-Route::get('/privancy', function () {
+Route::get('/privacy', function () {
     return view('privacy');
 });
 
-Route::get('/sign-up', function () {
-    return view('sign-up');
+Route::get('/signup', function () {
+    return view('signup');
 });
 
 Route::get('/terms', function () {
@@ -37,53 +39,75 @@ Route::get('/terms', function () {
 });
 
 
+Route::controller(SampleController::class)->group(function(){
+
+    Route::get('login', 'login')->name('login');
+
+    Route::get('signup', 'register')->name('signup');
+
+    Route::post('validate_signup', 'validate_signup')->name('authenticate.validate_signup');
+
+    Route::get('logout', 'logout')->name('logout');
+
+    Route::post('validate_login', 'validate_login')->name('authenticate.validate_login');
+
+    Route::get('dashboard', 'dashboard')->name('dashboard');
+});
+
+
 Route::get('/client/profile', function () {
     return view('/client/profile');
 });
-Route::get('/layout.index', function () {
-    return view('layout.index');
+
+Route::get('/admin.modals', function () {
+    return view('admin.modals');
+});
+Route::get('/admin.form_basic', function () {
+    return view('admin.form_basic');
 });
 
-Route::get('/layout.modals', function () {
-    return view('layout.modals');
+Route::get('/admin.form_avancé', function () {
+    return view('admin.form_avancé');
 });
-Route::get('/layout.form_basic', function () {
-    return view('layout.form_basic');
-});
-
-Route::get('/layout.form_avancé', function () {
-    return view('layout.form_avancé');
-});
-Route::get('/layout.prospect', function () {
-    return view('layout.prospect');
+Route::get('/admin.edit', function () {
+    return view('admin.edit');
 });
 
-Route::get('/layout.colors', function () {
-    return view('layout.colors');
+Route::get('/admin.prospect', [
+    CommercialController::class,"prospect"
+]);
+
+Route::get('/admin.client', [
+    CommercialController::class,"client"
+]);
+
+Route::get('/admin.opportunité', [
+    CommercialController::class,"opportunite"
+]);
+
+Route::get('/admin.colors', function () {
+    return view('admin.colors');
 });
 
-Route::get('/layout.login', function () {
-    return view('layout.login');
+Route::get('/admin.login', function () {
+    return view('admin.login');
 });
 
-Route::get('/layout.page_blanc', function () {
-    return view('layout.page_blanc');
-});
-
-
-Route::get('/layout.charts', function () {
-    return view('layout.charts');
-});
-
-Route::get('/layout.opportunité', function () {
-    return view('layout.opportunité');
-});
-
-Route::get('/layout.produit', function () {
-    return view('layout.produit');
+Route::get('/admin.page_blanc', function () {
+    return view('admin.page_blanc');
 });
 
 
+Route::get('/admin.charts', function () {
+    return view('admin.charts');
+});
 
 
+Route::get('/admin.produit', function () {
+    return view('admin.produit');
+});
 
+
+Route::get('/admin.edit', function () {
+    return view('admin.edit');
+});

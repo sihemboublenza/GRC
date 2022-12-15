@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use mysql_xdevapi\Exception;
+use App\Models\client;
 
 class CommercialController extends Controller
 {
@@ -11,9 +16,44 @@ class CommercialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function prospect()
     {
-        //
+        $prospects = DB::select('select * from prospect');
+        return view('admin.prospect',['prospects'=>$prospects]);
+    }
+
+    public function client()
+    {
+        $clients = DB::select('select * from client');
+        return view('admin.client',['clients'=>$clients]);
+    }
+
+    public function opportunite()
+    {
+        $opportunites = DB::select('select * from opportunite');
+        return view('admin.opportunité',['opportunites'=>$opportunites]);
+    }
+
+    public function edit.client(Request $request, $id)
+    {
+        $client = Client::where('id', '=', $id)->first();
+
+        $request->validate([
+            'societe_client' => 'required',
+            'tel_client' => 'required',
+            'adresse_client' => 'required',
+            'siteweb_client' => 'required'
+        ]);
+
+        $client->societe_client = $request->get('societe_client');
+        $client->tel_client = $request->get('tel_client');
+        $client->adresse_client = $request->get('adresse_client');
+        $client->siteweb_client = $request->get('siteweb_client');
+
+        $client->save();
+
+        flashy()->success('Client ajouté avec succès');
+        return redirect()->route('admin.client');
     }
 
     /**
