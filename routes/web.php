@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SampleController;
+use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\CommercialController;
 
 /*
@@ -39,7 +39,7 @@ Route::get('/terms', function () {
 });
 
 
-Route::controller(SampleController::class)->group(function(){
+Route::controller(AuthenticateController::class)->group(function () {
 
     Route::get('login', 'login')->name('login');
 
@@ -73,16 +73,31 @@ Route::get('/admin.edit', function () {
     return view('admin.edit');
 });
 
+Route::get('/test', function () {
+    return view('home');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/products', function () {
+    return view('products');
+});
+
 Route::get('/admin.prospect', [
-    CommercialController::class,"prospect"
+    CommercialController::class,
+    "prospect"
 ]);
 
 Route::get('/admin.client', [
-    CommercialController::class,"client"
+    CommercialController::class,
+    "client"
 ]);
 
 Route::get('/admin.opportunité', [
-    CommercialController::class,"opportunite"
+    CommercialController::class,
+    "opportunite"
 ]);
 
 Route::get('/admin.colors', function () {

@@ -9,7 +9,7 @@ use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class SampleController extends Controller
+class AuthenticateController extends Controller
 {
     function login()
     {
