@@ -25,12 +25,14 @@ class AuthenticateController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if(Auth::attempt($credentials))
+        if(Auth::guard('back')->attempt($credentials))
         {
-
             return redirect('dashboard');
         }
-
+        if(Auth::guard('front')->attempt($credentials))
+        {
+            return redirect('index');
+        }
         return redirect('login')->with('success', 'Login not valid');
     }
 
@@ -43,14 +45,16 @@ class AuthenticateController extends Controller
     {
         $request->validate([
             'email'=> 'required|email|unique:users',
-            'name'=> 'required',
+            'nom'=> 'required',
+            'prenom'=> 'required',
             'password'=> 'required|min:6'
         ]);
 
         $data = $request->all();
 
         User::create([
-            'name' => $data['name'],
+            'nom' => $data['nom'],
+            'prenom' => $data['prennom'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);

@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class opportunite extends Model
+class Opportunite extends Model
 {
-
   protected $fillable =[
   'id_opp',
   'nom',
@@ -16,9 +15,4 @@ class opportunite extends Model
   'date_de_cloture',
   'n_facture',
   ];
-  
-   
-
-
-
-}
+  }

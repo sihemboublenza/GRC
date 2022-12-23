@@ -36,10 +36,14 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'back' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'front' => [
+            'driver' => 'session',
+            'provider' => 'contacts'
+        ]
     ],
 
     /*
@@ -64,6 +68,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'contacts' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Contact::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

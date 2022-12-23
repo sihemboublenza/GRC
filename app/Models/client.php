@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class client extends Model
+class Client extends Model
 {
        protected $fillable =[
 	 'id_produit',
@@ -17,7 +17,7 @@ class client extends Model
 	 ];
 	 	 
 }
- public function profile()
+ function profile()
  {
-	 return $this->hasone(profile:class,'id_client');
+	 return $this->hasone(Profile::class,'id_client');
  }

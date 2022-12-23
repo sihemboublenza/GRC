@@ -18,23 +18,23 @@ class CommercialController extends Controller
      */
     public function prospect()
     {
-        $prospects = DB::select('select * from prospect');
+        $prospects = DB::select('select * from prospects');
         return view('admin.prospect',['prospects'=>$prospects]);
     }
 
     public function client()
     {
-        $clients = DB::select('select * from client');
+        $clients = DB::select('select * from clients');
         return view('admin.client',['clients'=>$clients]);
     }
 
     public function opportunite()
     {
-        $opportunites = DB::select('select * from opportunite');
+        $opportunites = DB::select('select * from opportunites');
         return view('admin.opportunité',['opportunites'=>$opportunites]);
     }
 
-    public function edit.client(Request $request, $id)
+    public function editClient(Request $request, $id)
     {
         $client = Client::where('id', '=', $id)->first();
 
