@@ -8,7 +8,7 @@
                         <div class="text-container">
                             <h1 class="h1-large">The #1 CRM app for <span class="replace-me">small business, young startups, bootstrappers</span></h1>
                             <p class="p-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim, neque ut vanic barem ultrices sollicitudin</p>
-                            <a class="btn-solid-lg" href="{{url('sign-up')}}">Sign up for free</a>
+                            <a class="btn-solid-lg" href="{{url('signup')}}">Sign up for free</a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -294,7 +294,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h4>Ioniq will change the way you think about CRM solutions due to it’s advanced tools and integrated functionalities</h4>
-                        <a class="btn-outline-lg page-scroll" href="{{url('sign-up')}}">Sign up for free</a>
+                        <a class="btn-outline-lg page-scroll" href="{{url('signup')}}">Sign up for free</a>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
@@ -329,7 +329,7 @@
                                     <li>Ut convallis aliquama set</li>
                                 </ul>
                                 <div class="price">Free</div>
-                                <a href="{{url('sign-up')}}" class="btn-solid-reg">Sign up</a>
+                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -350,7 +350,7 @@
                                     <li>Mauris non luctus est</li>
                                 </ul>
                                 <div class="price">$19<span>/month</span></div>
-                                <a href="{{url('sign-up')}}" class="btn-solid-reg">Sign up</a>
+                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -371,7 +371,7 @@
                                     <li>Id tellus hendrerit lacinia</li>
                                 </ul>
                                 <div class="price">$29<span>/month</span></div>
-                                <a href="{{url('sign-up')}}" class="btn-solid-reg">Sign up</a>
+                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
                             </div>
                         </div>
                         <!-- end of card -->
