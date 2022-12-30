@@ -82,7 +82,7 @@ Route::get('/layout.opportunité', function () {
 Route::get('/layout.produit', function () {
     return view('layout.produit');
 });
-
+Route::get('{id_client}/edit', [ClientConntroller::class , 'edit']);
 
 
 

@@ -16,13 +16,41 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+			$table->string('prenom');
+			/* $table->string('fonction')->nullable();
+			 $table->string('tel')->nullable();
+			*/
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+			 $table->enum('role',  ['commercial','admin']);
             $table->rememberToken();
             $table->timestamps();
         });
+		/*
+		 Schema::table('users', function (Blueprint $table) {
+
+         
+            $table->foreign('client')
+			      ->nullable()
+
+                  ->references('id_client')
+
+                  ->on('client')
+
+                  ->onDelete('cascade')
+
+                  ->onUpdate('cascade');
+
+           // $table->engine = 'InnoDB';
+
+        });
+		*/
+
     }
+		
+		
+  
 
     /**
      * Reverse the migrations.
