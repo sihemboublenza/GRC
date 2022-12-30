@@ -119,7 +119,7 @@ Route::get('/admin.page_blanc', function () {
 Route::get('/admin.charts', function () {
     return view('admin.charts');
 });
-
+Route::get('{id_client}/edit', [ClientConntroller::class , 'edit']);
 
 Route::get('/admin.produit', function () {
     return view('admin.produit');
