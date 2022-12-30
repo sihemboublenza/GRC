@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -318,3 +318,4 @@
         <script src="js/scripts.js"></script> <!-- Custom scripts -->
     </body>
 </html>
+@endsection

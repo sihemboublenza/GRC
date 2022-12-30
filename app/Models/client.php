@@ -8,12 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
        protected $fillable =[
-	 'id_produit',
-	 'nom' ,
-	 'description',
-	 'photo',
-	 'prix',
-	 'quantite',
+	 'societe_client' ,
+	 'tel_client',
+	 'adresse_client',
+	 'siteweb_client',
 	 ];
 	 	 
 }

@@ -73,6 +73,7 @@ Route::get('/admin.edit', function () {
     return view('admin.edit');
 });
 
+
 Route::get('/test', function () {
     return view('home');
 });
@@ -84,6 +85,8 @@ Route::get('/contact', function () {
 Route::get('/products', function () {
     return view('products');
 });
+
+
 
 Route::get('/admin.prospect', [
     CommercialController::class,

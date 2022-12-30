@@ -1,7 +1,5 @@
 @extends('layout')
-@section('contenu')
-
-
+@section('content')
         <!-- Header -->
         <header class="ex-header">
             <div class="container">
