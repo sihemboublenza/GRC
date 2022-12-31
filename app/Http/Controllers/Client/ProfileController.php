@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Stock;
  
-class ClientController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -57,7 +57,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $Grc		= contact::find($id_client);
+        $Grc		= contact::find($id);
         return view('client.profile', compact('Grc'));  // -> resources/views/stocks/edit.blade.php
     }
  
@@ -76,7 +76,7 @@ class ClientController extends Controller
             'email_c'=>'required',
             'tel_c'=>'required',
         ]); 
-        $Grc = contact::find($id_client);
+        $Grc = contact::find($id);
         // Getting values from the blade template form
         $Grc->nom_c =  $request->get('nom_c');
         $Grc->email_c =  $request->get('email_c');

@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-       protected $fillable =[
-	 'societe_client' ,
-	 'tel_client',
-	 'adresse_client',
-	 'siteweb_client',
-	 ];
+	use HasFactory;
+	protected $table = 'client';
+	protected $primarykey = 'id';
+    protected $fillable =[
+	 'societe',
+	 'tel',
+	 'adresse',
+	 'siteweb',
+	 'prospect',
+	];
 	 	 
 }
- function profile()
- {
-	 return $this->hasone(Profile::class,'id_client');
- }

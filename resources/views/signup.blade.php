@@ -31,11 +31,18 @@
                                     <label for="floatingInput">Email address</label>
                                 </div>
                                 <div class="mb-4 form-floating">
-                                    <input type="text" class="form-control" name="name" id="floatingInput2">
-                                    @if($errors->has('name'))
-                                    <span class="text-danger">{{ $errors->first('name')}} </span>
+                                    <input type="text" class="form-control" name="nom" id="floatingInput">
+                                    @if($errors->has('nom'))
+                                    <span class="text-danger">{{ $errors->first('nom')}} </span>
                                     @endif
-                                    <label for="floatingInput">Your name</label>
+                                    <label for="floatingInput">Nom</label>
+                                </div>
+                                <div class="mb-4 form-floating">
+                                    <input type="text" class="form-control" name="prenom" id="floatingInput">
+                                    @if($errors->has('prenom'))
+                                    <span class="text-danger">{{ $errors->first('prenom')}} </span>
+                                    @endif
+                                    <label for="floatingInput">Prenom</label>
                                 </div>
                                 <div class="mb-4 form-floating">
                                     <input type="password" name="password" class="form-control" id="floatingPassword">

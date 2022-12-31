@@ -7,17 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prospect extends Model
 {
-     protected $fillable =[
-	 'id_p',
-	 'nom_p',
-	 'prenom_p',
-	 'societe_p',
-	 'fonction_p',
-	 'email_p',
-	 'tel_p',
-	 'adresse_p',
+	use HasFactory;
+	protected $table = 'prospect';
+	protected $primarykey = 'id';
+    protected $fillable =[
+	 'nom',
+	 'prenom',
+	 'societe',
+	 'fonction',
+	 'email',
+	 'tel',
+	 'adresse',
+	 'siteweb',
 	 'statut',
 	 'source',
-	 ];
-	 
+	];
 }

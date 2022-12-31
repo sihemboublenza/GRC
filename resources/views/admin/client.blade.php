@@ -40,10 +40,10 @@
 
                       @foreach($clients as $client)
                       <tr>
-                      <td>{{$client->societe_client}}</td>
-                      <td>{{$client->tel_client}}</td>
-                      <td>{{$client->adresse_client}}</td>
-                      <td>{{$client->siteweb_client}}</td>
+                      <td>{{$client->societe}}</td>
+                      <td>{{$client->tel}}</td>
+                      <td>{{$client->adresse}}</td>
+                      <td>{{$client->siteweb}}</td>
                       <td><a href="" class="btn btn-warning"> EDIT</a></td>
                       <td><a href="" class="btn btn-danger"> DELETE</a></td>
                       </tr>

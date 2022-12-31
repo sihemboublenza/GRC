@@ -18,14 +18,13 @@ return new class extends Migration
         	
 		 Schema::create('produit', function (Blueprint $table){
 		 
-		 $table->id('id_produit');
+		$table->id('id');
         $table->string('nom');
 		$table->string('description');
-		 $table->string('photo')->default('default.jpg');
-		  $table->double('prix');
-		   $table->integer('quanite');
-
-		
+		$table->string('photo')->default('default.jpg');
+	    $table->double('prix');
+		$table->integer('quanite');
+        $table->timestamps();	
 		
     });
     }

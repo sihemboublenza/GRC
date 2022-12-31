@@ -16,19 +16,18 @@ return new class extends Migration
     {
 		 Schema::create('prospect', function (Blueprint $table){
 		 
-		 $table->id('id_prospect');
+		$table->id('id');
         $table->string('nom');
 		$table->string('prenom');
 		$table->string('societe');
-		$table->string('foction');
+		$table->string('fonction');
 		$table->string('email');
 		$table->string('tel',10);
 		$table->string('adresse');
 		$table->string('siteweb');
-		 $table->enum('statut', ['chaud','froid']);
+		$table->enum('statut', ['Chaud','Froid']);
 		$table->string('source');
-	
-		
+        $table->timestamps();		
     });
 	}
 

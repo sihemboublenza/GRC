@@ -8,14 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Contact extends Authenticatable
 {
-	 protected $fillable =[
-    'nom',
-    'prenom',
-    'email',
-    'password',
-    'tel',
-    'fonction',    
-    'source',
+    use HasFactory;
+	protected $table = 'contact';
+	protected $primarykey = 'id';
+    protected $fillable =[
+	 'nom',
+	 'prenom',
+	 'fonction',
+	 'tel',
+	 'email',
+	 'password',
+	 'client',
 	];
 	
 }

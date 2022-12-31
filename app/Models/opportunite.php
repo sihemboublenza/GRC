@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Opportunite extends Model
 {
+  use HasFactory;
+	 protected $table = 'opportunite';
+	 protected $primarykey = 'id';
   protected $fillable =[
-  'id_opp',
   'nom',
   'montant',
   'etape',
   'date_de_cloture',
-  'n_facture',
+  'client',
   ];
   }

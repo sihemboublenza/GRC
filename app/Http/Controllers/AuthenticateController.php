@@ -33,7 +33,7 @@ class AuthenticateController extends Controller
         {
             return redirect('index');
         }
-        return redirect('login')->with('success', 'Login not valid');
+        return redirect('login')->with('success', 'Invalid credentials');
     }
 
     function register()
@@ -54,7 +54,7 @@ class AuthenticateController extends Controller
 
         User::create([
             'nom' => $data['nom'],
-            'prenom' => $data['prennom'],
+            'prenom' => $data['prenom'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
@@ -62,7 +62,7 @@ class AuthenticateController extends Controller
         return redirect('login')->with('success', 'Registered, you can login');
     }
 
-    function dashboard(Request $request)
+    function dashboard (Request $request)
     {
         if(Auth::check())
         {

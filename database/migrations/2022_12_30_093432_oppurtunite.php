@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-          Schema::create('oppurtunite', function (Blueprint $table){
+        Schema::create('oppurtunite', function (Blueprint $table){
 		  
-		 $table->id('id_opp');
+		$table->id('id');
 		$table->string('nom');
 		$table->double('montant');
 		$table->string('etape');
-		$table->date('datedecloture');
-	  $table->unsignedBigInteger('client')->nullable()->index();
-
+		$table->date('date_de_cloture');
+	    $table->unsignedBigInteger('client')->nullable()->index();
+        $table->timestamps();
  
    });
    
@@ -31,7 +31,7 @@ return new class extends Migration
          
             $table->foreign('client')
 			     
-                  ->references('id_client')
+                  ->references('id')
 
                   ->on('client')
 

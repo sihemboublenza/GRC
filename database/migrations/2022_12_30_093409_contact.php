@@ -17,15 +17,15 @@ return new class extends Migration
 		
 		 Schema::create('contact', function (Blueprint $table){
 		 
-		 $table->id('id_contact');
+		$table->id('id');
         $table->string('nom');
 		$table->string('prenom');
 		$table->string('fonction');
 		$table->string('tel',10);
-		$table->string('password');
-		 $table->string('email')->unique();
-		
-		  $table->unsignedBigInteger('client')->nullable()->index();
+        $table->string('email')->unique();
+		$table->string('password');	
+		$table->unsignedBigInteger('client')->nullable()->index();
+        $table->timestamps();
 
  
     });
@@ -35,7 +35,7 @@ return new class extends Migration
          
             $table->foreign('client')
 			     
-                  ->references('id_client')
+                  ->references('id')
 
                   ->on('client')
 

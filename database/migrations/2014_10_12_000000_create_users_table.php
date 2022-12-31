@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            
             $table->id();
-            $table->string('name');
+            $table->string('nom');
 			$table->string('prenom');
 			/* $table->string('fonction')->nullable();
 			 $table->string('tel')->nullable();
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-			 $table->enum('role',  ['commercial','admin']);
+			$table->enum('role',  ['Commercial','Admin']);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,7 +35,7 @@ return new class extends Migration
             $table->foreign('client')
 			      ->nullable()
 
-                  ->references('id_client')
+                  ->references('id')
 
                   ->on('client')
 

@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class RDV extends Model
 {
-      protected $fillable =[
-	  'id_rdv',
-	  'date',
-	  'compte_rendu',
+	use HasFactory;
+	protected $table = 'rdv';
+	protected $primarykey = 'id';
+    protected $fillable =[
+		'date',
+	 	'heure',
+	 	'compte_rendu',
+		'contact',
+		'commercial',
 	  ];
 }

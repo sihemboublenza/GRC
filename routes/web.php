@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticateController;
-use App\Http\Controllers\CommercialController;
+use App\Http\Controllers\ProspectController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,16 +59,7 @@ Route::get('/client/profile', function () {
     return view('/client/profile');
 });
 
-Route::get('/admin.modals', function () {
-    return view('admin.modals');
-});
-Route::get('/admin.form_basic', function () {
-    return view('admin.form_basic');
-});
 
-Route::get('/admin.form_avancé', function () {
-    return view('admin.form_avancé');
-});
 Route::get('/admin.edit', function () {
     return view('admin.edit');
 });
@@ -86,12 +77,7 @@ Route::get('/products', function () {
     return view('products');
 });
 
-
-
-Route::get('/admin.prospect', [
-    CommercialController::class,
-    "prospect"
-]);
+Route::resource('/prospect', ProspectController::class);
 
 Route::get('/admin.client', [
     CommercialController::class,
@@ -103,23 +89,13 @@ Route::get('/admin.opportunité', [
     "opportunite"
 ]);
 
-Route::get('/admin.colors', function () {
-    return view('admin.colors');
-});
 
 Route::get('/admin.login', function () {
     return view('admin.login');
 });
 
-Route::get('/admin.page_blanc', function () {
-    return view('admin.page_blanc');
-});
 
-
-Route::get('/admin.charts', function () {
-    return view('admin.charts');
-});
-Route::get('{id_client}/edit', [ClientConntroller::class , 'edit']);
+Route::get('{id}/edit', [ClientController::class , 'edit']);
 
 Route::get('/admin.produit', function () {
     return view('admin.produit');

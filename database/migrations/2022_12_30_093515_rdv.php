@@ -15,24 +15,20 @@ return new class extends Migration
     {
    Schema::create('rdv', function (Blueprint $table){
 		 
-		 $table->id('id_rdv');
+		$table->id('id');
         $table->date('date');
-		$table->string('heure');
-		
-		  $table->double('compterendu');
-		    $table->unsignedBigInteger('contact')->nullable()->index();
-			  $table->unsignedBigInteger('commercial')->nullable()->index();
-
- 
-
- 
+		$table->string('heure');		
+		$table->double('compterendu');
+	    $table->unsignedBigInteger('contact')->nullable()->index();
+		$table->unsignedBigInteger('commercial')->nullable()->index();
+        $table->timestamps(); 
 
     });
 	  Schema::table('rdv', function (Blueprint $table) {
 
             $table->foreign('contact')
 
-                  ->references('id_contact')
+                  ->references('id')
 
                   ->on('contact')
 

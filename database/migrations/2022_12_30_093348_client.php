@@ -15,12 +15,14 @@ return new class extends Migration
     {
      
         Schema::create('client', function (Blueprint $table){
-		 $table->id('id_client');
+            
+		$table->id();
 		$table->string('societe');
 		$table->string('tel',10);
 		$table->string('adresse');
 		$table->string('siteweb');
-		 $table->unsignedBigInteger('prospect')->nullable()->index();
+		$table->unsignedBigInteger('prospect')->nullable()->index();
+        $table->timestamps();
 
  
 	
@@ -32,7 +34,7 @@ return new class extends Migration
  
             $table->foreign('prospect')
 			     
-                  ->references('id_prospect')
+                  ->references('id')
 
                   ->on('prospect');
 
