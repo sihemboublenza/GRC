@@ -17,7 +17,7 @@
           <div class="col-xl-6 offset-xl-3">
             <div class="text-box mt-5 mb-5">
               <h4 class="text-center">Ajouter opportunite</h4>
-              <form action="{{ url('ppportunite/') }}" method="post">
+              <form action="{{ url('opportunite/') }}" method="post">
                 {!! csrf_field() !!}
                 <label for="floatingInput">Nom</label>
                 <input type="text" name="nom" class="form-control" id="floatingInput"><br>
@@ -27,6 +27,9 @@
                 <input type="text" name="etape" class="form-control" id="floatingInput3"><br>
                 <label for="floatingInput4">Date de cloture</label>
                 <input type="date" name="date_de_cloture" class="form-control" id="floatingInput4"><br>
+              
+                <label for="floatingInput4">Produit</label>
+                <input type="text" name="produit" class="form-control" id="floatingInput4" ><br>
                 <br>
                 <div class="col-md-12 text-center">
                   <input type="submit" value="Ajouter" class="btn btn-success">

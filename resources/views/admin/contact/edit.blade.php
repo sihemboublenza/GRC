@@ -19,7 +19,7 @@
               <h4 class="text-center">Modifier contact</h4>
               <form action="{{ url('contact/' . $contacts->id) }}" method="post">
                 {!! csrf_field() !!}
-                @method("PATCH"
+                @method("PATCH")
                 <label for="floatingInput">Nom</label>
                 <input type="text" name="nom" class="form-control" value="{{$contacts->nom}}" id="floatingInput"><br>
                 <label for="floatingInput2">Prénom</label>
@@ -30,7 +30,7 @@
                 <input type="email" name="email" class="form-control" value="{{$contacts->email}}" id="floatingInput4"><br>
                 <label for="floatingInput5">Téléphone</label>
                 <input type="tel" name="tel" class="form-control" value="{{$contacts->tel}}" id="floatingInput5"><br>
-                <img src="../resources/images/{{$contact->photo}}">
+                <img src="../resources/images/{{$contacts->photo}}">
                 <br>
                 <div class="col-md-12 text-center">
                   <input type="submit" value="Modifier" class="btn btn-warning">

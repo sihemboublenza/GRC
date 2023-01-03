@@ -44,4 +44,13 @@ class ClientController extends Controller
         Client::destroy($id);
         return redirect('client')->with('flash_message', 'Client supprimé !');
     }
+    public function mastercontact($id,Request $request){
+    
+        if(client::where('id',$id)->exists()){
+        $client = client::where('id',$id)->first();
+        $contact= contact::where('client',$client->id)->get();
+        return view('admin.client.mastercontact', compact('contact','client'));
+       }
+        else return redirect()->back();
+    }
 }

@@ -19,7 +19,7 @@
               <h4 class="text-center">Modifier opportunité</h4>
               <form action="{{ url('opportunite/' . $opportunites->id) }}" method="post">
                 {!! csrf_field() !!}
-                @method("PATCH"
+                @method("PATCH")
                 <label for="floatingInput">Nom</label>
                 <input type="text" name="nom" class="form-control" value="{{$opportunites->nom}}" id="floatingInput"><br>
                 <label for="floatingInput2">Montant</label>
@@ -28,6 +28,10 @@
                 <input type="text" name="etape" class="form-control" value="{{$opportunites->etape}}" id="floatingInput3"><br>
                 <label for="floatingInput4">Date de cloture</label>
                 <input type="date" name="date_de_cloture" class="form-control" value="{{$opportunites->date_de_cloture}}" id="floatingInput4"><br>
+                <label for="floatingInput4">Client</label>
+                <input type="text" name="client" class="form-control" value="{{$opportunites->client}}" id="floatingInput4" ><br>
+                <label for="floatingInput4">Produit</label>
+                <input type="text" name="produit" class="form-control" value="{{$opportunites->produit}}" id="floatingInput4" ><br>
                 <br>
                 <div class="col-md-12 text-center">
                   <input type="submit" value="Modifier" class="btn btn-warning">

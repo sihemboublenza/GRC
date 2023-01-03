@@ -60,6 +60,7 @@ Route::get('/products', function () {
     return view('products');
 });
 
+//Route::get('/client/mastercontact/{$societe}', 'App\Http\Controllers\ClientController@viewcontact')->name('client.viewcontact');
 Route::resource('/prospect', ProspectController::class);
 
 Route::resource('/produit', ProduitController::class);

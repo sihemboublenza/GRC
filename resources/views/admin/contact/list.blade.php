@@ -26,9 +26,7 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Fonction</th>
-                <th>Société</th>
-                <th>Email</th>
-                <th>Téléphone</th>
+                <th>Client</th>
                 <th/>
                 <th>Actions</th>
                 <th/>
@@ -41,9 +39,7 @@
               <td>{{$item->nom}}</td>
               <td>{{$item->prenom}}</td>
               <td>{{$item->fonction}}</td>
-              <td></td>
-              <td>{{$item->email}}</td>
-              <td>{{$item->tel}}</td>
+             <td>{{$item->client}}</td>
               <td><a href="{{ url('/contact/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
               <td><a href="{{ url('/contact/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
               <td><form method="POST" action="{{ url('/contact' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">

@@ -18,8 +18,8 @@ class RdvController extends Controller
         return view('admin.rdv.show')->with('rdvs', $rdvs);
     }
     public function create()
-    {
-        return view('admin.rdv.create');
+    {   $rdv=rdv::join('contact','contact.id','=',"rdv.contact")->get();
+        return view('admin.rdv.create',compact('rdv'));
     }
     public function store(Request $request)
     {

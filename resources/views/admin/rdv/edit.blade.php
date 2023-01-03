@@ -19,7 +19,7 @@
               <h4 class="text-center">Modifier Rendez-vous</h4>
               <form action="{{ url('rdv/' . $rdvs->id) }}" method="post">
                 {!! csrf_field() !!}
-                @method("PATCH"
+                @method("PATCH")
                 <label for="floatingInput">Date</label>
                 <input type="date" name="date" class="form-control" value="{{$rdvs->date}}" id="floatingInput"><br>
                 <label for="floatingInput2">Heure</label>

@@ -25,8 +25,7 @@
                 <input type="text" name="prenom" class="form-control" id="floatingInput2"><br>
                 <label for="floatingInput3">Email</label>
                 <input type="email" name="email" class="form-control" id="floatingInput3"><br>
-                <label for="floatingInput4">Rôle</label>
-                pas fait
+                
                 <br>
                 <div class="col-md-12 text-center">
                   <input type="submit" value="Ajouter" class="btn btn-success">

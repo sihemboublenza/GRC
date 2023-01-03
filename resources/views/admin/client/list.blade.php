@@ -41,6 +41,7 @@
               <td>{{$item->adresse}}</td>
               <td>{{$item->siteweb}}</td>
               <td><a href="{{ url('/client/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
+               <td><a href="{{ url('/client/' . $item->id . '/mastercontact/') }}" class="btn btn-sm btn-primary">View</a></td>
               <td><a href="{{ url('/client/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
               <td><form method="POST" action="{{ url('/client' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                       {{ method_field('DELETE') }}

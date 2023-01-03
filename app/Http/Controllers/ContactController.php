@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Client;
+use Illuminate\Support\Facades\DB;
+
+
 
 class ContactController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::all();
-        return view ('admin.contact.list')->with('contacts', $contacts);
+        $contacts = Contact::all(); 
+        $client = Contact::join('client','client.id','=','contact.client')
+            ->get();       
+        return view ('admin.contact.list',compact('client'))->with('contacts', $contacts);
     }
     public function show($id)
     {
@@ -19,7 +25,9 @@ class ContactController extends Controller
     }
     public function create()
     {
-        return view('admin.contact.create');
+        $client = Contact::join('client','client.id','=','contact.client')
+                  ->get();
+        return view('admin.contact.create',compact('client'));
     }
     public function store(Request $request)
     {
