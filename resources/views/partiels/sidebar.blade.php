@@ -24,40 +24,40 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('admin.client')}}">
+        <a class="nav-link"  href="{{url('/client')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('admin.produit')}}">
+        <a class="nav-link"  href="{{url('/contact')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Contacts</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('admin.opportunité')}}">
+        <a class="nav-link" href="{{url('/opportunite')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Opportunités</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('admin.produit')}}">
+        <a class="nav-link"  href="{{url('/rdv')}}">
           <i class="fa fa-calendar"></i>
           <span>Rendez-Vous</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('admin.produit')}}">
+        <a class="nav-link"  href="{{url('/produit')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Produits</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('admin.produit')}}">
+        <a class="nav-link"  href="{{url('/user')}}">
           <i class="fas fa-users fa-sm fa-fw mr-2"></i>
           <span>Utilisateurs</span>
         </a>

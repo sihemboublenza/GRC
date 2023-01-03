@@ -2,18 +2,14 @@
 
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\ProspectController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\RdvController;
+use App\Http\Controllers\OpportuniteController;
+use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
@@ -26,16 +22,8 @@ Route::get('/article', function () {
     return view('article');
 });
 
-Route::get('/privacy', function () {
-    return view('privacy');
-});
-
 Route::get('/signup', function () {
     return view('signup');
-});
-
-Route::get('/terms', function () {
-    return view('terms');
 });
 
 
@@ -60,11 +48,6 @@ Route::get('/client/profile', function () {
 });
 
 
-Route::get('/admin.edit', function () {
-    return view('admin.edit');
-});
-
-
 Route::get('/test', function () {
     return view('home');
 });
@@ -79,29 +62,14 @@ Route::get('/products', function () {
 
 Route::resource('/prospect', ProspectController::class);
 
-Route::get('/admin.client', [
-    CommercialController::class,
-    "client"
-]);
+Route::resource('/produit', ProduitController::class);
 
-Route::get('/admin.opportunité', [
-    CommercialController::class,
-    "opportunite"
-]);
+Route::resource('/contact', ContactController::class);
 
+Route::resource('/client', ClientController::class);
 
-Route::get('/admin.login', function () {
-    return view('admin.login');
-});
+Route::resource('/rdv', RdvController::class);
 
+Route::resource('/opportunite', OpportuniteController::class);
 
-Route::get('{id}/edit', [ClientController::class , 'edit']);
-
-Route::get('/admin.produit', function () {
-    return view('admin.produit');
-});
-
-
-Route::get('/admin.edit', function () {
-    return view('admin.edit');
-});
+Route::resource('/user', UserController::class);

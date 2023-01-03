@@ -24,6 +24,7 @@ return new class extends Migration
 		$table->string('tel',10);
         $table->string('email')->unique();
 		$table->string('password');	
+        $table->string('photo')->default('default.png');
 		$table->unsignedBigInteger('client')->nullable()->index();
         $table->timestamps();
 

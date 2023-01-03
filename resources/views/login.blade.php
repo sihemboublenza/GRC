@@ -44,10 +44,6 @@
                                     @endif
                                     <label for="floatingPassword">Password</label>
                                 </div>
-                                <div class="mb-4 form-check">
-                                    <input type="checkbox" class="form-check-input" id="Check1">
-                                    <label class="form-check-label" for="Check1">I agree with the site's stated <a href="{{url('privacy')}}">Privacy Policy</a> and <a href="{{url('terms')}}">Terms & Conditions</a></label>
-                                </div>
                                 <button type="submit" class="form-control-submit-button">Log in</button>
                             </form>
                             <!-- end of log in form -->

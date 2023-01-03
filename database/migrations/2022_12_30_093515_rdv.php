@@ -18,7 +18,7 @@ return new class extends Migration
 		$table->id('id');
         $table->date('date');
 		$table->string('heure');		
-		$table->double('compterendu');
+		$table->string('compterendu');
 	    $table->unsignedBigInteger('contact')->nullable()->index();
 		$table->unsignedBigInteger('commercial')->nullable()->index();
         $table->timestamps(); 
