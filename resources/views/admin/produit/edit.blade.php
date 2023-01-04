@@ -28,9 +28,9 @@
                 <img src="../public/images/{{$produits->photo}}">
                 <input type="file" name="photo" class="form-control" id="floatingInput3"><br>
                 <label for="floatingInput4">Prix</label>
-                <input type="number" name="prix" class="form-control" value="{{$produits->qunatite}}" id="floatingInput5"><br>
+                <input type="number" name="prix" class="form-control" value="{{$produits->prix}}" id="floatingInput5"><br>
                 <label for="floatingInput5">Quantité</label>
-                <input type="tel" name="quantite" class="form-control" value="{{$produits->tel}}" id="floatingInput6"><br>
+                <input type="tel" name="quantite" class="form-control" value="{{$produits->quantite}}" id="floatingInput6"><br>
                 <div class="col-md-12 text-center">
                 <input type="submit" value="Modifier" class="btn btn-warning">
                 </div>

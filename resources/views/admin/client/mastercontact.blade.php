@@ -14,7 +14,7 @@
     <div class="col-lg-12">
       <div class="card mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h4 class="m-0 font-weight-bold text-primary"> les Contacts de la societe </h4>
+          <h4 class="m-0 font-weight-bold text-primary"> les contacts de la société </h4>
         </div>
         <div class="col-md-12 text-right">
           <a href="{{ url('/contact/create') }}" class="btn btn-success">Ajouter</a>
