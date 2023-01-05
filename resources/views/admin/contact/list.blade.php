@@ -39,7 +39,7 @@
               <td>{{$item->nom}}</td>
               <td>{{$item->prenom}}</td>
               <td>{{$item->fonction}}</td>
-             <td>{{$item->client}}</td>
+             <td>{{$item->societe}}</td>
               <td><a href="{{ url('/contact/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
               <td><a href="{{ url('/contact/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
               <td><form method="POST" action="{{ url('/contact' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
