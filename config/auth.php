@@ -68,7 +68,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'contacts' => [
+        'contact' => [
             'driver' => 'eloquent',
             'model' => App\Models\Contact::class,
         ]
