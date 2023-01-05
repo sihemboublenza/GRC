@@ -22,10 +22,10 @@
                 <label for="floatingInput2">Description</label>
                 <input type="text" name="description" class="form-control" value="{{$produits->description}}" id="floatingInput2" disabled><br>
                 <img src="../public/images/{{$produits->photo}}">
-                <label for="floatingInput4">Prix</label>
-                <input type="number" name="prix" class="form-control" value="{{$produits->qunatite}}" id="floatingInput5" disabled><br>
-                <label for="floatingInput5">Quantité</label>
-                <input type="tel" name="quantite" class="form-control" value="{{$produits->tel}}" id="floatingInput6" disabled><br>
+                <label for="floatingInput3">Prix</label>
+                <input type="number" name="prix" class="form-control" value="{{$produits->prix}}" id="floatingInput3" disabled><br>
+                <label for="floatingInput4">Quantité</label>
+                <input type="tel" name="quantite" class="form-control" value="{{$produits->quantite}}" id="floatingInput4" disabled><br>
                 <br>
             </div>
           </div>
