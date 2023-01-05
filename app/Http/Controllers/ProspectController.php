@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prospect;
+use App\Models\Client;
+use App\Models\Contact;
 
 class ProspectController extends Controller
 {
@@ -26,6 +28,36 @@ class ProspectController extends Controller
         $input = $request->all();
         Prospect::create($input);
         return redirect('prospect')->with('flash_message', 'Prospect ajouté !');
+    }
+    
+     public function transforme($id){
+        $prospect = Prospect::find($id);
+        if ($prospect->est_transmit == false) {
+            $client = new Client();
+            $client->societe = $prospect->societe;
+            $client->tel = $prospect->tel;
+            $client->adresse = $prospect->adresse;
+            $client->siteweb = $prospect->siteweb;
+            $client->save();
+            
+            $contact = new Contact();
+            $contact->nom = $prospect->nom;
+            $contact->prenom = $prospect->prenom;
+            $contact->fonction = $prospect->fonction;
+            $contact->tel = $prospect->tel;
+            $contact->email = $prospect->email;
+            $contact->client = $client->id;
+            $contact->save();
+
+            $prospect->est_transmit = true;
+            $prospect->save();
+            session()->flash('succes', 'prespect transformer avec success');
+            return redirect('prospects');
+        }else {
+            session()->flash('echec', 'prespect est deja transmit');
+            return back();
+        } 
+
     }
     public function edit($id)
     {
