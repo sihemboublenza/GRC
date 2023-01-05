@@ -18,7 +18,7 @@ return new class extends Migration
             
 		$table->id();
 		$table->string('societe');
-		$table->string('tel',10);
+		$table->integer('tel',10);
 		$table->string('adresse');
 		$table->string('siteweb');
 		$table->unsignedBigInteger('prospect')->nullable()->index();

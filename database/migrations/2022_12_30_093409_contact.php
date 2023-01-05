@@ -21,7 +21,7 @@ return new class extends Migration
         $table->string('nom');
 		$table->string('prenom');
 		$table->string('fonction');
-		$table->string('tel',10);
+		$table->integer('tel',10);
         $table->string('email')->unique();
 		$table->string('password');	
         $table->string('photo')->default('default.png');

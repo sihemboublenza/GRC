@@ -18,8 +18,10 @@ return new class extends Migration
 		$table->id('id');
 		$table->string('nom');
 		$table->double('montant');
-		$table->string('etape');
+		$table->integer('etape');
 		$table->date('date_de_cloture');
+        $table->string('produit');
+
 	    $table->unsignedBigInteger('client')->nullable()->index();
         $table->timestamps();
  

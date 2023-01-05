@@ -17,7 +17,7 @@ return new class extends Migration
 		 
 		$table->id('id');
         $table->date('date');
-		$table->string('heure');		
+		$table->time('heure');		
 		$table->string('compterendu');
 	    $table->unsignedBigInteger('contact')->nullable()->index();
 		$table->unsignedBigInteger('commercial')->nullable()->index();
