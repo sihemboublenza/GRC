@@ -25,14 +25,14 @@
                 <input type="text" name="prenom" class="form-control" id="floatingInput2"><br>
                 <label for="floatingInput3">Fonction</label>
                 <input type="text" name="fonction" class="form-control" id="floatingInput3"><br>
-                <label for="floatingInput5">Téléphone</label>
-                <input type="tel" name="tel" class="form-control" id="floatingInput5"><br>
-                <label for="floatingInput4">Adresse email</label>
-                <input type="email" name="email" class="form-control" id="floatingInput4"><br>
-                <label for="floatingInput4">Mot de passe</label>
-                <input type="password" class="form-control" id="floatingInput4"><br>
-                <label for="floatingInput4">Client</label>
-                <select class="form-control" id="floatingInput5" name="client">
+                <label for="floatingInput4">Téléphone</label>
+                <input type="tel" name="tel" class="form-control" id="floatingInput4"><br>
+                <label for="floatingInput5">Adresse email</label>
+                <input type="email" name="email" class="form-control" id="floatingInput5"><br>
+                <label for="floatingInput6">Mot de passe</label>
+                <input type="password" name="password" class="form-control" id="floatingInput6"><br>
+                <label for="floatingInput7">Client</label>
+                <select class="form-control" id="floatingInput7" name="client">
                       @foreach($client as $client)
                     <option value="{{$client->id}}">{{$client->societe}}</option>
                       @endforeach

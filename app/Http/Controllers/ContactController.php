@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Client;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -28,25 +29,22 @@ class ContactController extends Controller
     {  
         /*$client = Contact::join('client','client.id','=','contact.client')
                   ->get();*/
-                  $client = Client::all();
+        $client = Client::all();
         return view('admin.contact.create',['client' => $client]);
     }
     public function store(Request $request)
     {
-      /*  $input = $request->all();
-        Contact::create($input);*/
+        $data = $request->all();
 
-
-  $contact = new Contact();
-  $contact->nom = $request->input('nom');
-  $contact->prenom = $request->input('prenom');
-  $contact->fonction = $request->input('fonction');
-  $contact->tel = $request->input('tel');
-  $contact->email = $request->input('email');
-  $contact->password = bcrypt($request->input('password'));
-  $contact->client = $request->input('client');
-
-  $contact->save();
+        Contact::create([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'fonction' => $data['fonction'],
+            'tel' => $data['tel'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'client' => $data['client'],
+        ]);
         return redirect('contact')->with('flash_message', 'Contact ajouté !');
     }
     public function edit($id)
