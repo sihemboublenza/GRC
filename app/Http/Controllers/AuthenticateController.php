@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\contact;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthenticateController extends Controller
 {
@@ -15,7 +17,13 @@ class AuthenticateController extends Controller
     {
         return view('login');
     }
-
+    
+    public function afficherInfos()
+    {
+          
+       
+        return view('contact.profile', array('user'=>Auth::user(),'b'=>$b));
+    }
     function validate_login(Request $request)
     {
         $request->validate([
@@ -30,8 +38,10 @@ class AuthenticateController extends Controller
             return redirect('dashboard');
         }
         if(Auth::guard('front')->attempt($credentials))
-        {
-            return redirect('index');
+        {    $m = DB::table('contact')
+                   ->where('contact.id','=',Auth::guard('front')->id())
+                   ->get();
+            return view('/contact/profile',['m' => $m]);
         }
         return redirect('login')->with('success', 'Invalid credentials');
     }

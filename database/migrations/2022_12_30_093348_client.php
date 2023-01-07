@@ -16,9 +16,9 @@ return new class extends Migration
      
         Schema::create('client', function (Blueprint $table){
             
-		$table->id();
+		$table->id('id');
 		$table->string('societe');
-		$table->integer('tel',10);
+		$table->string('tel',10);
 		$table->string('adresse');
 		$table->string('siteweb');
 		$table->unsignedBigInteger('prospect')->nullable()->index();

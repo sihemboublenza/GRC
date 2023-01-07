@@ -43,10 +43,14 @@ Route::controller(AuthenticateController::class)->group(function () {
 });
 
 
-Route::get('/client/profile', function () {
-    return view('/client/profile');
+Route::get('/contact/list', function () {
+    return view('/contact/list');
 });
+/*Route::get('/contact/profile', function () {
+    return view('/contact/profile');
+});*/
 
+Route::get('/contact/profile', 'App\Http\Controllers\AuthenticateController@validate_login');
 
 Route::get('/test', function () {
     return view('home');
@@ -60,7 +64,7 @@ Route::get('/products', function () {
     return view('products');
 });
 
-//Route::get('/client/mastercontact/{$societe}', 'App\Http\Controllers\ClientController@viewcontact')->name('client.viewcontact');
+
 Route::resource('/prospect', ProspectController::class);
 
 Route::resource('/produit', ProduitController::class);

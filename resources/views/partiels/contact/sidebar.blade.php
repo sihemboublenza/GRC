@@ -1,0 +1,30 @@
+ <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
+        <div class="sidebar-brand-icon">
+          <img src="{{url('img/logo/favicon.png')}}">
+        </div>
+        <div class="sidebar-brand-text mx-3">CRM</div>
+      </a>
+      <li class="nav-item">
+        <a class="nav-link"  href="#">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Clients</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"  href="{{url('/contact/list')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Contacts</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Opportunités</span>
+        </a>
+      </li>
+
+      
+      <hr class="sidebar-divider">
+    </ul>
