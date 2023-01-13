@@ -19,11 +19,26 @@ class AuthenticateController extends Controller
     }
     
     public function afficherInfos()
-    {
-          
-       
+    {   
         return view('contact.profile', array('user'=>Auth::user(),'b'=>$b));
     }
+
+    public static function authentified_user_data()
+    {
+        $photo = Auth::user()->photo;
+        $nom = Auth::user()->nom;
+        $prenom = Auth::user()->prenom;
+        return compact('nom', 'prenom', 'photo');
+    }
+
+    public static function isAdmin()
+    {
+        if (Auth::user()->role == "Admin")
+            return true;
+        else
+            return false;
+    }
+
     function validate_login(Request $request)
     {
         $request->validate([

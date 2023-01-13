@@ -1,7 +1,12 @@
+<?php
+use App\Http\Controllers\AuthenticateController;
+$admin = AuthenticateController::isAdmin();
+?>
+ 
  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/favicon.png">
+          <img src="images/logo/favicon.png">
         </div>
         <div class="sidebar-brand-text mx-3">CRM</div>
       </a>
@@ -25,30 +30,31 @@
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/client')}}">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-building"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/contact')}}">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>Contacts</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('/opportunite')}}">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Opportunités</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/rdv')}}">
-          <i class="fa fa-calendar"></i>
+          <i class="fas fa-fw fa-calendar"></i>
           <span>Rendez-Vous</span>
         </a>
       </li>
+      <?php if ($admin): ?>
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/produit')}}">
           <i class="fas fa-fw fa-table"></i>
@@ -58,9 +64,10 @@
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/user')}}">
-          <i class="fas fa-users fa-sm fa-fw mr-2"></i>
+          <i class="fas fa-fw fa-user"></i>
           <span>Utilisateurs</span>
         </a>
       </li>
+      <?php endif ?>
       <hr class="sidebar-divider">
     </ul>

@@ -46,6 +46,7 @@ Route::controller(AuthenticateController::class)->group(function () {
 Route::get('/contact/list', function () {
     return view('/contact/list');
 });
+
 /*Route::get('/contact/profile', function () {
     return view('/contact/profile');
 });*/
@@ -67,8 +68,6 @@ Route::get('/products', function () {
 
 Route::resource('/prospect', ProspectController::class);
 
-Route::resource('/produit', ProduitController::class);
-
 Route::resource('/contact', ContactController::class);
 
 Route::resource('/client', ClientController::class);
@@ -76,5 +75,7 @@ Route::resource('/client', ClientController::class);
 Route::resource('/rdv', RdvController::class);
 
 Route::resource('/opportunite', OpportuniteController::class);
+
+Route::resource('/produit', ProduitController::class);
 
 Route::resource('/user', UserController::class);
