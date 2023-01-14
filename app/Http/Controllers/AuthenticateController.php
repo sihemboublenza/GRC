@@ -18,10 +18,7 @@ class AuthenticateController extends Controller
         return view('login');
     }
     
-    public function afficherInfos()
-    {   
-        return view('contact.profile', array('user'=>Auth::user(),'b'=>$b));
-    }
+    
 
     public static function authentified_user_data()
     {
@@ -56,7 +53,7 @@ class AuthenticateController extends Controller
         {    $m = DB::table('contact')
                    ->where('contact.id','=',Auth::guard('front')->id())
                    ->get();
-            return view('/contact/profile',['m' => $m]);
+            return view('/contacts/profile',['m' => $m]);
         }
         return redirect('login')->with('success', 'Invalid credentials');
     }

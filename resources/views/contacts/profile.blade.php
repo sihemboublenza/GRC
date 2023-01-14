@@ -106,14 +106,11 @@
                   <hr> 
                     
                   <div class="row">
-                    <div class="col-sm-12">
-                      <a href="#">
-                        <button class="form-control-submit-button pull-right">Modifier</button></a>
-                      <!-- <a href="/notes"><button class="btn btn-light">
-                                    <i class="fa fa-edit text-success"></i>  Notes
-                                  </button> </a> -->
-                                  
-                    </div>
+<div class="col-sm-12">
+<a href="{{ url('contacts/'.$m->id.'/editprofile') }} " >
+<button class="form-control-submit-button pull-right">Modifier</button></a>                                 
+</div>
+</div>
                   </div>
                   
                 </div>

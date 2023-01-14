@@ -5,15 +5,10 @@
         </div>
         <div class="sidebar-brand-text mx-3">CRM</div>
       </a>
-      <li class="nav-item">
-        <a class="nav-link"  href="#">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Clients</span>
-        </a>
-      </li>
+    
 
       <li class="nav-item">
-        <a class="nav-link"  href="{{url('/contact/list')}}">
+        <a class="nav-link"  href="{{url('/contacts/contacts')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Contacts</span>
         </a>

@@ -43,15 +43,15 @@ Route::controller(AuthenticateController::class)->group(function () {
 });
 
 
-Route::get('/contact/list', function () {
-    return view('/contact/list');
-});
+
 
 /*Route::get('/contact/profile', function () {
     return view('/contact/profile');
 });*/
-
-Route::get('/contact/profile', 'App\Http\Controllers\AuthenticateController@validate_login');
+Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@validate_login')->name('contact.profile');
+Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
+Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
+Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
 
 Route::get('/test', function () {
     return view('home');
