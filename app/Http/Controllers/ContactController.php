@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Client;
+use App\Models\Opportunite;
+use App\Models\Produit;
+
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 
 
@@ -46,6 +51,7 @@ class ContactController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'client' => $data['client'],
+            
         ]);
         return redirect('contact')->with('flash_message', 'Contact ajouté !');
     }
@@ -115,7 +121,52 @@ class ContactController extends Controller
     return view('/contacts/contacts',['contacts'=>$contacts],['client'=>$client]);
     }
 
-    public static function authentified_contact_data()
+    public function viewOpportunites(){ 
+
+       
+
+            //pour afficher les informations du client
+               $client=Contact::join('client','client.id','=','contact.client')
+               ->where('contact.id','=',Auth::guard('front')->id())
+               ->get();
+              /* $opportunite = Client :: join('client','client.id','=','opportunite.client')
+               ->join ('contact','contact.client','=','client.id')
+               ->where('contact.id','=',Auth::guard('front')->id())
+               ->get();*/
+
+
+               $opportunite = Opportunite :: join('client','client.id','=','opportunite.client')
+               ->join ('contact','contact.client','=','client.id')
+               ->where('contact.id','=',Auth::guard('front')->id())
+               ->get();
+              /* $opportunite=DB :: table('opportunite')
+               ->where ('opportunite.client','=',$client->id)
+               ->get();*/
+
+   return view('/contacts/opportunites',['opportunite'=>$opportunite],['client'=>$client]);
+   }
+
+   public function viewFacture($nom_opp){ 
+
+       
+    if(Opportunite::where('nom_opp',$nom_opp)->exists()){
+        $op = Opportunite::where('nom_opp',$nom_opp)
+        ->first();
+
+    }
+    
+
+       $produit = Produit :: join('opp_prod','opp_prod.produit','=','produit.id')
+       ->where('opp_prod.opportunite','=',$op->id)
+       ->get();
+       
+      
+
+return view('/contacts/facture',['produit'=>$produit]);
+}
+
+
+  /*  public static function authentified_contact_data()
     {    $currentCon = DB::table('contact')
         ->where('contact.id','=',Auth::guard('front')->id())
         ->get();
@@ -124,6 +175,6 @@ class ContactController extends Controller
         $nom = $currentCon->nom;
         $prenom = $currentCon->prenom;}
         return compact('currentCon');
-    }
+    }*/
 
 }

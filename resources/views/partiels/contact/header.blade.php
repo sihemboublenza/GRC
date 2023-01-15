@@ -1,16 +1,11 @@
-<?php
-use App\Http\Controllers\ContactController;
-$data = ContactController::authentified_contact_data();
-?>
 
-@foreach($currentCon as $c)
 <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
           <ul class="navbar-nav ml-auto">            
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="{{url('img/boy.png')}}" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">$c->nom. $c->prenom</span>
+                <span class="ml-2 d-none d-lg-inline text-white small"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -26,4 +21,3 @@ $data = ContactController::authentified_contact_data();
             </li>
           </ul>
         </nav>
-@endforeach

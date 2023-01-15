@@ -52,6 +52,10 @@ Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@val
 Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
 Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
 Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
+Route::get('/contacts/opportunites', 'App\Http\Controllers\ContactController@viewOpportunites');
+Route::get('/contacts/facture/{nom_opp}', 'App\Http\Controllers\ContactController@viewFacture')->name('contact.viewFacture');
+
+
 
 Route::get('/test', function () {
     return view('home');

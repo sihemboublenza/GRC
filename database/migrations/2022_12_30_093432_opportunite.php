@@ -16,12 +16,10 @@ return new class extends Migration
         Schema::create('opportunite', function (Blueprint $table){
 		  
 		$table->id('id');
-		$table->string('nom');
+		$table->string('nom_opp');
 		$table->double('montant');
-		$table->integer('etape');
+		$table->enum('etape',['Prospection','Proposition/Devis','Négociation/Vérification','Cloturée/Ganée','Cloturée/Perdue']);
 		$table->date('date_de_cloture');
-        $table->string('produit');
-
 	    $table->unsignedBigInteger('client')->nullable()->index();
         $table->timestamps();
  
