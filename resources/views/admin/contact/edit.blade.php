@@ -28,8 +28,8 @@
                 <input type="text" name="fonction" class="form-control" value="{{$contacts->fonction}}" id="floatingInput3"><br>
                 <label for="floatingInput4">Adresse email</label>
                 <input type="email" name="email" class="form-control" value="{{$contacts->email}}" id="floatingInput4"><br>
-                <label for="floatingInput5">Téléphone</label>
-                <input type="tel" name="tel" class="form-control" value="{{$contacts->tel}}" id="floatingInput5"><br>
+                <label for="floatingInput6">Téléphone</label>
+                <input type="tel" name="tel" class="form-control" value="{{$contacts->tel}}" id="floatingInput6"><br>
                 <img src="../resources/images/{{$contacts->photo}}">
                 <br>
                 <div class="col-md-12 text-center">

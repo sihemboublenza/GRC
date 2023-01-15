@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="image/logo/favicon.png" rel="icon">
-  <title>Admin Dashboard</title>
+  <title>Contacte</title>
   <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
@@ -17,12 +17,12 @@
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
-   @include('partiels.sidebar')
+   @include('partiels.contact.sidebar')
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-   @include('partiels.header')
+   @include('partiels.contact.header')
         <!-- Topbar -->
 
         <!-- Container Fluid-->
@@ -30,9 +30,10 @@
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      @include('partiels.footer')
+      @include('partiels.contact.footer')
       <!-- Footer -->
     </div>
+    
   </div>
 
   <!-- Scroll to top -->

@@ -43,10 +43,15 @@ Route::controller(AuthenticateController::class)->group(function () {
 });
 
 
-Route::get('/client/profile', function () {
-    return view('/client/profile');
-});
 
+
+/*Route::get('/contact/profile', function () {
+    return view('/contact/profile');
+});*/
+Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@validate_login')->name('contact.profile');
+Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
+Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
+Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
 
 Route::get('/test', function () {
     return view('home');
@@ -60,10 +65,8 @@ Route::get('/products', function () {
     return view('products');
 });
 
-//Route::get('/client/mastercontact/{$societe}', 'App\Http\Controllers\ClientController@viewcontact')->name('client.viewcontact');
-Route::resource('/prospect', ProspectController::class);
 
-Route::resource('/produit', ProduitController::class);
+Route::resource('/prospect', ProspectController::class);
 
 Route::resource('/contact', ContactController::class);
 
@@ -72,5 +75,7 @@ Route::resource('/client', ClientController::class);
 Route::resource('/rdv', RdvController::class);
 
 Route::resource('/opportunite', OpportuniteController::class);
+
+Route::resource('/produit', ProduitController::class);
 
 Route::resource('/user', UserController::class);

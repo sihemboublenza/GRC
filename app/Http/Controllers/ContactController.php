@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Client;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -28,25 +31,22 @@ class ContactController extends Controller
     {  
         /*$client = Contact::join('client','client.id','=','contact.client')
                   ->get();*/
-                  $client = Client::all();
+        $client = Client::all();
         return view('admin.contact.create',['client' => $client]);
     }
     public function store(Request $request)
     {
-      /*  $input = $request->all();
-        Contact::create($input);*/
+        $data = $request->all();
 
-
-  $contact = new Contact();
-  $contact->nom = $request->input('nom');
-  $contact->prenom = $request->input('prenom');
-  $contact->fonction = $request->input('fonction');
-  $contact->tel = $request->input('tel');
-  $contact->email = $request->input('email');
-  $contact->password = bcrypt($request->input('password'));
-  $contact->client = $request->input('client');
-
-  $contact->save();
+        Contact::create([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'fonction' => $data['fonction'],
+            'tel' => $data['tel'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'client' => $data['client'],
+        ]);
         return redirect('contact')->with('flash_message', 'Contact ajouté !');
     }
     public function edit($id)
@@ -66,4 +66,64 @@ class ContactController extends Controller
         Contact::destroy($id);
         return redirect('contact')->with('flash_message', 'Contact supprimé !');
     }
+
+
+
+
+
+    public function editProfile($id)
+    {   //$m = Contact::find($id);
+        $m =DB::table('Contact')
+           ->where('contact.id','=',Auth::guard('front')->id())
+           ->find($id);
+      //$m=is_bool($c);
+        //dd($m)
+        return view('contacts.editprofile',['m'=>$m]);
+    }
+     public function updateProfile(Request $request, $id)
+    {   $m = DB::table('contact')
+                   ->where('contact.id','=',Auth::guard('front')->id())
+                   ->get();
+        $contact = Contact::find($id);
+        $contact->nom = $request->input('nom');
+        $contact->prenom = $request->input('prenom');
+        $contact->fonction = $request->input('fonction');
+        $contact->tel = $request->input('tel');
+        $contact->email = $request->input('email');
+        $contact->password = Hash::make($request->input('password'));
+        $contact->save();
+        //dd($contact);
+        return view('/contacts/profile',['m' => $m]);
+    }
+   
+    public function viewContacts(){ 
+
+         $currentCon = DB::table('contact')
+          ->where('contact.id','=',Auth::guard('front')->id())
+          ->get();
+         foreach ($currentCon as $c){
+                $contacts =DB::table('contact')
+                ->where('contact.id','!=',$c->id)
+                ->where('contact.client','=',$c->client)
+                ->get();}
+
+             //pour afficher les informations du client
+                $client=Contact::join('client','client.id','=','contact.client')
+                ->where('contact.id','=',Auth::guard('front')->id())
+                ->get();
+
+    return view('/contacts/contacts',['contacts'=>$contacts],['client'=>$client]);
+    }
+
+    public static function authentified_contact_data()
+    {    $currentCon = DB::table('contact')
+        ->where('contact.id','=',Auth::guard('front')->id())
+        ->get();
+       foreach ($currentCon as $c){
+      //  $photo = $currentCon->photo;
+        $nom = $currentCon->nom;
+        $prenom = $currentCon->prenom;}
+        return compact('currentCon');
+    }
+
 }

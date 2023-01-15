@@ -9,39 +9,67 @@ class ProduitController extends Controller
 {
     public function index()
     {
-        $produits = Produit::all();
-        return view ('admin.produit.list')->with('produits', $produits);
+        if (AuthenticateController::isAdmin())
+        {
+            $produits = Produit::all();
+            return view ('admin.produit.list')->with('produits', $produits);
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function show($id)
     {
-        $produits = Produit::find($id);
-        return view('admin.produit.show')->with('produits', $produits);
+        if (AuthenticateController::isAdmin())
+        {
+            $produits = Produit::find($id);
+            return view('admin.produit.show')->with('produits', $produits);
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function create()
     {
-        return view('admin.produit.create');
+        if (AuthenticateController::isAdmin())
+        {
+            return view('admin.produit.create');
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function store(Request $request)
     {
-        $input = $request->all();
-        Produit::create($input);
-        return redirect('produit')->with('flash_message', 'Produit ajouté !');
+        if (AuthenticateController::isAdmin())
+        {
+            $input = $request->all();
+            Produit::create($input);
+            return redirect('produit')->with('flash_message', 'Produit ajouté !');
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function edit($id)
     {
-        $produits = Produit::find($id);
-        return view('admin.produit.edit')->with('produits', $produits);
+        if (AuthenticateController::isAdmin())
+        {
+            $produits = Produit::find($id);
+            return view('admin.produit.edit')->with('produits', $produits);
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function update(Request $request, $id)
     {
-        $produits = Produit::find($id);
-        $input = $request->all();
-        $produits->update($input);
-        return redirect('produit')->with('flash_message', 'Produit modifié !');
+        if (AuthenticateController::isAdmin())
+        {
+            $produits = Produit::find($id);
+            $input = $request->all();
+            $produits->update($input);
+            return redirect('produit')->with('flash_message', 'Produit modifié !');
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
     public function destroy($id)
     {
-        Produit::destroy($id);
-        return redirect('produit')->with('flash_message', 'Produit supprimé !');
+        if (AuthenticateController::isAdmin())
+        {
+            Produit::destroy($id);
+            return redirect('produit')->with('flash_message', 'Produit supprimé !');
+        }
+        else return redirect ('dashboard')->with('success', 'You are not admin');
     }
 }
