@@ -18,7 +18,6 @@
         </div>
         <div class="col-md-12 text-right">
           <a href="{{ url('/prospect/create') }}" class="btn btn-success">Ajouter</a>
-         <a href="{{ url('/prospect/transforme') }}" class="btn btn-info">transforme</a>
 
         </div>
         <div class="p-3 table-responsive">
@@ -48,6 +47,7 @@
               <td>{{$item->statut}}</td>
               <td><a href="{{ url('/prospect/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
               <td><a href="{{ url('/prospect/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
+              <td><a href="{{ url('/prospect/' . $item->id  . '/transforme/') }}" class="btn btn-info">transforme</a></td>
               <td><form method="POST" action="{{ url('/prospect' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                       {{ method_field('DELETE') }}
                       {{ csrf_field() }}
