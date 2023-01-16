@@ -52,6 +52,9 @@ Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@val
 Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
 Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
 Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
+Route::get('/client/{id}/mastercontact', 'App\Http\Controllers\ClientController@mastercontact')->name('client.mastercontact');;
+Route::get('/prospect/{id}/transforme', 'App\Http\Controllers\ProspectController@transforme')->name('prospect.transforme');;
+
 
 Route::get('/test', function () {
     return view('home');
@@ -79,3 +82,5 @@ Route::resource('/opportunite', OpportuniteController::class);
 Route::resource('/produit', ProduitController::class);
 
 Route::resource('/user', UserController::class);
+
+Route::get('/laravel_google_chart', 'GoogleGraphController@index');

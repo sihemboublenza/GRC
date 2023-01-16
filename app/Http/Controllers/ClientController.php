@@ -48,10 +48,10 @@ class ClientController extends Controller
     public function mastercontact($id,Request $request){
     
         if(Client::where('id',$id)->exists()){
-        $client = Client::where('id',$id)->first();
-        $contact= Contact::where('client',$client->id)->get();
-        return view('admin.client.mastercontact', compact('contact','client'));
-       }
+
+        $client = Client::where("client.id","=",$id)->first();
+        $contact= Contact::where('client',"=",$client->id)->get();
+        return view('admin.client.mastercontact', ['contact' => $contact,'client'=>$client ]);       }
         else return redirect()->back();
     }
 }
