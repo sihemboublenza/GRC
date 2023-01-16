@@ -26,7 +26,7 @@ return new class extends Migration
 		$table->string('adresse');
 		$table->string('siteweb');
 		$table->enum('statut', ['Chaud','Froid']);
-		$table->string('source');
+		$table->enum('source', ['Web','Téléphone','Partenaire','Salon','Bouche à oreille','Liste prospects','Autre']);
         $table->timestamps();		
     });
 	}
