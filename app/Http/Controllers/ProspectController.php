@@ -32,7 +32,7 @@ class ProspectController extends Controller
     
      public function transforme($id){
         $prospect = Prospect::find($id);
-        if ($prospect->est_transmit == false) {
+        if ($prospect->est_transmit == 0) {
             $client = new Client();
             $client->societe = $prospect->societe;
             $client->tel = $prospect->tel;
@@ -49,7 +49,7 @@ class ProspectController extends Controller
             $contact->client = $client->id;
             $contact->save();
 
-            $prospect->est_transmit = true;
+            $prospect->est_transmit = 1;
             $prospect->save();
             session()->flash('succes', 'prespect transformer avec success');
             return redirect('prospects');
