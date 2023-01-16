@@ -52,15 +52,10 @@ Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@val
 Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
 Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
 Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
-<<<<<<< HEAD
-Route::get('/client/{id}/mastercontact', 'App\Http\Controllers\ClientController@mastercontact')->name('client.mastercontact');;
-Route::get('/prospect/{id}/transforme', 'App\Http\Controllers\ProspectController@transforme')->name('prospect.transforme');;
-=======
+Route::get('/client/{id}/mastercontact', 'App\Http\Controllers\ClientController@mastercontact')->name('client.mastercontact');
+Route::get('/prospect/{id}/transforme', 'App\Http\Controllers\ProspectController@transforme')->name('prospect.transforme');
 Route::get('/contacts/opportunites', 'App\Http\Controllers\ContactController@viewOpportunites');
 Route::get('/contacts/facture/{nom_opp}', 'App\Http\Controllers\ContactController@viewFacture')->name('contact.viewFacture');
-
->>>>>>> 11a9a71ec3a894ee1bfec321e64ea2af502fd269
-
 
 Route::get('/test', function () {
     return view('home');
