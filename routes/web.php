@@ -49,8 +49,10 @@ Route::controller(AuthenticateController::class)->group(function () {
     return view('/contact/profile');
 });*/
 Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@validate_login')->name('contact.profile');
+Route::get('/contacts/profile', 'App\Http\Controllers\ContactController@Profile')->name('contacts.profil');
 Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');
 Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
+Route::post('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfilephoto')->name('contact.updatephoto');
 Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
 Route::get('/client/{id}/mastercontact', 'App\Http\Controllers\ClientController@mastercontact')->name('client.mastercontact');
 Route::get('/prospect/{id}/transforme', 'App\Http\Controllers\ProspectController@transforme')->name('prospect.transforme');

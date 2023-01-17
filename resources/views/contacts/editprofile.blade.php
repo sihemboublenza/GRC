@@ -17,7 +17,7 @@
             <div class="col-md-10 col-md-offset-1">
             <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
             <form enctype="multipart/form-data" action="{{url('/contacts/'. $m->id)}}" method="POST">
-                <label>Modifier la photo</label>
+                <label>Update Profile Image</label>
                 <input type="file" name="photo">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <br><br>
@@ -92,7 +92,7 @@
                                 </div>
                                 
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="password" name="password" class="form-control"value="{{$m->password}}" >
+                                    <input type="password" name="password" class="form-control">
                                 </div>
                                 
 
@@ -114,7 +114,7 @@
                                 
                                 </div>
                                  <input class="form-control-submit-button pull-right" type="submit" name="" value="Modifier">
-                                
+                                 <a href="{{route('contacts.profil')}}"class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</a>
 
                               </form>
 

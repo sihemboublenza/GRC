@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\ContactController;
 use Illuminate\Http\Request;
 
 use Hash;
@@ -52,8 +52,13 @@ class AuthenticateController extends Controller
         if(Auth::guard('front')->attempt($credentials))
         {    $m = DB::table('contact')
                    ->where('contact.id','=',Auth::guard('front')->id())
-                   ->get();
-            return view('/contacts/profile',['m' => $m]);
+                   ->first();
+                   $tasks_controller = new ContactController;
+                   $tasks_controller->profile($m);
+        return \App::call('App\Http\Controllers\ContactController@profile');
+           //return view('/contacts/profile',['m' => $m]);
+                   //return redirect()->action('App\Http\Controllers\ContactController@profile',['m' => $m]);
+              //$result=((new ContactController)->profile($m));
         }
         return redirect('login')->with('success', 'Invalid credentials');
     }

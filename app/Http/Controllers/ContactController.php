@@ -196,4 +196,11 @@ return view('/contacts/facture',['produit'=>$produit]);
        return compact('currentCon');
         }
 
+  public function profile(){ 
+       $m = DB::table('contact')
+                   ->where('contact.id','=',Auth::guard('front')->id())
+                   ->get();
+       //$m =request()->get('m');
+       return view('/contacts/profile',['m' => $m]);
+        }
 }
