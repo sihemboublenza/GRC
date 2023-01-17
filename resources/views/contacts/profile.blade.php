@@ -6,48 +6,20 @@
   <div class="profile-nav col-md-3">
       <div class="panel">
           <div class="user-heading round">
-              <a href="#">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-              </a>
-              
-    @foreach ($m as $m)
-
-              <h1>{{$m->nom}} {{$m->prenom}}</h1>
-              <p> AAAAAA</p>
-            
+             @foreach ($m as $m)
+              <div class="col-md-10 col-md-offset-1"> 
+                  <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+                <span class="user_img"></span>
+                 <h1>{{$m->nom}} {{$m->prenom}}</h1>
+            </div>
           </div>
 
-          <!--<ul class="nav nav-pills nav-stacked">
-              <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-              <br>
-              <li><a href="#"> <i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">9</span></a></li>
-              <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
-          </ul>-->
+         
       </div>
   </div>
   <div class="profile-info col-md-9">
       <div class="panel">
-          <!--<form>
-              <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area"></textarea>
-          </form>
-          <!--<footer class="panel-footer">
-              <button class="btn btn-warning pull-right">Post</button>
-              <ul class="nav nav-pills">
-                <br> <br>
-              <li>
-                      <a href="#"><i class="fa fa-map-marker"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-camera"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class=" fa fa-film"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-microphone"></i></a>
-                  </li>
-              </ul>
-          </footer>-->
+         
       </div>
       <div class="panel">
           

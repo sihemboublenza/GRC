@@ -57,7 +57,17 @@ class AuthenticateController extends Controller
         }
         return redirect('login')->with('success', 'Invalid credentials');
     }
-
+    public static function authentified_contact_data(){ 
+    $currentCon = DB::table('contact')
+    ->where('contact.id','=',Auth::guard('front')->id())
+    ->first();
+    // ->toArray()
+    foreach ($currentCon as $c){ 
+    // $photo = $currentCon->photo;
+     $nom = $currentCon->nom;
+      $prenom = $currentCon->prenom;}
+       return compact('currentCon');
+        }
     function register()
     {
         return view('signup');

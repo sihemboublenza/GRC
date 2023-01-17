@@ -6,17 +6,33 @@
   <div class="profile-nav col-md-3">
       <div class="panel">
           <div class="user-heading round">
-              <a href="#">
+              <!--<a href="#">
                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
               </a>
               
             
 
               <h1></h1>
-              <p> AAAAAA</p>
-            
-          </div>
+              <p> AAAAAA</p>-->
+            <div class="col-md-10 col-md-offset-1">
+            <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+            <form enctype="multipart/form-data" action="{{url('/contacts/'. $m->id)}}" method="POST">
+                <label>Modifier la photo</label>
+                <input type="file" name="photo">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <br><br>
+                <input type="submit" class="btn-primary" >
+            </form>
+        </div>
+          
+                 
+                                <div class="mt-3">
 
+                                    <h4>{{$m->nom}} {{$m->prenom}}</h4>
+                                    
+                                    
+                                </div>
+                            </div>
          
       </div>
   </div>
@@ -30,9 +46,10 @@
               <div class="card mb-3">
                 <div class="card-body">
                   <form action= "{{url('/contacts/'. $m->id)}}" method="POST">
-                    <input type="hidden" name="_method" value="PUT">
+                    
 
-                               {{ csrf_field()}}
+                                {{ csrf_field()}}
+                               @method('PUT')
                                
                              <div class="row mb-3">
                                 <div class="col-sm-3">
@@ -97,7 +114,7 @@
                                 
                                 </div>
                                  <input class="form-control-submit-button pull-right" type="submit" name="" value="Modifier">
-                                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</button>
+                                
 
                               </form>
 

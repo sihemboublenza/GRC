@@ -29,9 +29,7 @@
                         <th>Etape</th>
                         <th>Date de cloture</th>
                         <th>Action</th>
-                        <th/>
-                        <th/>
-                        <th/>
+                        
                       </tr>
                     </thead>
                    
