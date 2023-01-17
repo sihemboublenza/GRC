@@ -23,6 +23,33 @@ class ProspectController extends Controller
     {
         return view('admin.prospect.create');
     }
+
+    public function contacted(Request $request)
+    {
+        $request->validate([
+            'email'=> 'required|email|unique:users',
+            'nom'=> 'required',
+            'prenom'=> 'required',
+            'societe' => 'required',
+            'fonction' => 'required',
+            'tel' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        Prospect::create([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'societe' => $data['societe'],
+            'fonction' => $data['fonction'],
+            'email' => $data['email'],
+            'tel' => $data['tel'],
+            'statut' => 'Chaud',
+            'source' => 'Web',
+        ]);
+
+        return redirect('login')->with('success', 'Thank you for your interest, you will hear from us soon');
+    }
     public function store(Request $request)
     {
         $input = $request->all();
@@ -32,7 +59,7 @@ class ProspectController extends Controller
     
      public function transforme($id){
         $prospect = Prospect::find($id);
-        if ($prospect->est_transmit == 0) {
+        if (!($prospect->transformed)) {
             $client = new Client();
             $client->societe = $prospect->societe;
             $client->tel = $prospect->tel;
@@ -49,10 +76,10 @@ class ProspectController extends Controller
             $contact->client = $client->id;
             $contact->save();
 
-            $prospect->est_transmit = 1;
+            $prospect->transformed = true;
             $prospect->save();
             session()->flash('succes', 'prespect transformer avec success');
-            return redirect('prospects');
+            return redirect('prospect');
         }else {
             session()->flash('echec', 'prespect est deja transmit');
             return back();

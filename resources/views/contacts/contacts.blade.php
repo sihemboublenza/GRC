@@ -1,4 +1,4 @@
-@extends('mastercontact')
+@extends('layout.contact.index')
 @section('content')
 
 <section class="vh-50" style="background-color: #f4f5f7;">

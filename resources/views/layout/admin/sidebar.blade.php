@@ -6,9 +6,8 @@ $admin = AuthenticateController::isAdmin();
  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/favicon.png">
+          <img src="images/logo.png"/>
         </div>
-        <div class="sidebar-brand-text mx-3">CRM</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">

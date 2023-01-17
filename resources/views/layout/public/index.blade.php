@@ -26,6 +26,7 @@
         <link href="{{url('css/fontawesome-all.min.css')}}" rel="stylesheet">
         <link href="{{url('css/swiper.css')}}" rel="stylesheet">
         <link href="{{url('css/styles.css')}}" rel="stylesheet">
+        <link href="{{url('css/alert.css')}}" rel="stylesheet">
         
         <!-- Favicon  -->
         <link rel="icon" href="{{url('images/favicon.png')}}">
@@ -37,11 +38,10 @@
             <div class="container">
 
                 <!-- Image Logo -->
-                <a class="navbar-brand logo-image" href="index.html"><img src="{{url('images/logo.svg')}}" alt="alternative"></a> 
+                <a class="" href="{{url('/')}}"><img src="{{url('images/logoBG.png')}}"></a> 
 
 
                 <!-- Text Logo - Use this if you don't have a graphic logo -->
-                <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
 
                 <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -50,13 +50,13 @@
                 <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav ms-auto navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+                            <a class="nav-link" href="{{url('/')}}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('products')}}">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('contact')}}">Contact</a>
+                            <a class="nav-link" href="{{url('signup')}}">Contact us</a>
                         </li>
                         </li>
                     </ul>
@@ -78,66 +78,44 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-col first">
-                            <h6>About Website</h6>
-                            <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit. Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
                         </div> <!-- end of footer-col -->
-                        <div class="footer-col second">
-                            <h6>Links</h6>
-                            <ul class="list-unstyled li-space-lg p-small">
-                                <li>Important: <a href="{{url('terms')}}">Terms & Conditions</a>, <a href="{{url('privacy')}}">Privacy Policy</a></li>
-                                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
-                                <li>Menu: <a href="#header">Home</a>, <a href="#features">Features</a>, <a href="#details">Details</a>, <a href="#pricing">Pricing</a></li>
-                            </ul>
+
+                        <div class="footer-col second">                            
                         </div> <!-- end of footer-col -->
+                        
                         <div class="footer-col third">
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="/">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="/">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="/">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-pinterest-p fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="/">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-instagram fa-stack-1x"></i>
                                 </a>
                             </span>
-                            <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+                            <p class="p-large">We prospect a large spectrum of clients.</p>
+                            <a href="mailto:prospectrum@site.com"><strong>prospectrum@site.com</strong></a>
                         </div> <!-- end of footer-col -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of footer -->  
         <!-- end of footer -->
-
-   
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
-                    </div> <!-- end of col -->
-
-                    <div class="col-lg-6">
-                        <p class="p-small">Distributed By<a href="https://themewagon.com/"> Themewagon</a></p>    
-                    </div> <!-- end of col -->
-                </div> <!-- enf of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of copyright --> 
-        <!-- end of copyright -->
         
 
         <!-- Back To Top Button -->

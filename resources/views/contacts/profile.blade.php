@@ -1,4 +1,4 @@
-@extends('mastercontact')
+@extends('layout.contact.index')
 @section('content')
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdey">

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.public.index')
         <!-- Header -->
         <header class="ex-header">
             <div class="container">
@@ -104,7 +104,7 @@
                         </div> <!-- end of text-box -->
                         <p class="mb-5">You vexed shy mirth now noise. Talked him people valley add use her depend letter. Allowance too applauded now way something recommend. Mrs age men and trees jokes fancy. Gay pretended engrossed eagerness continued ten. Admitting day him contained unfeeling attention on these random words generated with tool</p>
                         
-                        <a class="btn-solid-reg mb-5" href="{{url('layout')}}">Home</a>
+                        <a class="btn-solid-reg mb-5" href="{{url('/')}}">Home</a>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->

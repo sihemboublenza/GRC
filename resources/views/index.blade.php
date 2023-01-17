@@ -1,25 +1,24 @@
-@extends('layout')
+@extends('layout.public.index')
 @section('content')
 <!-- Header -->
-        <header id="header" class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                            <h1 class="h1-large">The #1 CRM app for <span class="replace-me">small business, young startups, bootstrappers</span></h1>
-                            <p class="p-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim, neque ut vanic barem ultrices sollicitudin</p>
-                            <a class="btn-solid-lg" href="{{url('signup')}}">Sign up for free</a>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-                        <div class="image-container">
-                            <img class="img-fluid" src="images/header-illustration.svg" alt="alternative">
-                        </div> <!-- end of image-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </header> <!-- end of header -->
-        <!-- end of header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">Brand new CRM app designed for <span class="replace-me">small business, young startups, bootstrappers</span></h1>
+                        <p class="p-large">Customer relationship management (CRM) solutions enable businesses to store and manage all their customers’ data. That data can be mined for insights, used to automate marketing and sales processes, forecast future sales and much more. There are many companies offering CRM software, each tuned to help businesses achieve different goals and objectives..</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/header-illustration.svg" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+<!-- end of header -->
 
 
         <!-- Features -->
@@ -27,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2 class="h2-heading">Ioniq CRM application is packed with <span>awesome features</span></h2>
+                        <h1 class="h2-heading">All the <span>awesome benefits</span> you get from a CRM</h1>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -39,8 +38,7 @@
                                 <span class="fas fa-headphones-alt"></span>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Customer Lists</h4>
-                                <p>Et blandit nisl libero at arcu. Donec ac lectus sed tellus mollis viverra. Nullam pharetra ante at nunc elementum</p>
+                                <h4 class="card-title">Make intelligent, data-driven decisions</h4>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -51,8 +49,7 @@
                                 <span class="far fa-clipboard"></span>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Sales Tracking</h4>
-                                <p>Vulputate nibh feugiat. Morbi pellent diam nec libero lacinia, sed ultrices velit scelerisque. Nunc placerat justo sem</p>
+                                <h4 class="card-title">Centralize customer data</h4>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -63,8 +60,7 @@
                                 <span class="far fa-comments"></span>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Reporting Tool</h4>
-                                <p>Ety suscipit metus sollicitudin euqu isq imperdiet nibh nec magna tincidunt, nec pala vehicula neque sodales verum</p>
+                                <h4 class="card-title">Increase customer retention rates</h4>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -82,9 +78,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
-                            <h2>Manage your customer’s expectations and get them to trust you</h2>
-                            <p>Vestibulum ullamcorper augue ex, imperdiet tincidunt tellus bibendum inconsectetur rutrum mauris orbi scelerisque cursus augue, ac suscipit sem mattis at ut suscipit</p>
-                            <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modal</a>
+                            <h1 class="h1-large">But, what's a CRM ?</span></h1>
+                            <br>
+                            <p>At the most basic level, CRM software allows marketers and salespeople to manage and analyze relationships w​ith the company’s actual and potential customers. It enables tracking every interaction with the company and collects information about the customer. This way, when speaking to a customer, the marketer always knows who they are and sees their history with the company. This makes the interaction more personalized, increases the chances of conversion, and encourages customer trust and loyalty</p>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
@@ -96,56 +92,6 @@
             </div> <!-- end of container -->
         </div> <!-- end of basic-1 -->
         <!-- end of details 1 -->
-
-
-        <!-- Details Modal -->
-        <div id="staticBackdrop" class="modal fade" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="row">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="col-lg-8">
-                            <div class="image-container">
-                                <img class="img-fluid" src="images/details-modal.jpg" alt="alternative">
-                            </div> <!-- end of image-container -->
-                        </div> <!-- end of col -->
-                        <div class="col-lg-4">
-                            <h3>Goals Setting</h3>
-                            <hr>
-                            <p>In gravida at nunc sodales pretium. Vivamus semper, odio vitae mattis auctor, elit elit semper magna ac tum nico vela spider</p>
-                            <h4>User Feedback</h4>
-                            <p>Sapien vitae eros. Praesent ut erat a tellus posuere nisi more thico cursus pharetra finibus posuere nisi. Vivamus feugiat</p>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="d-flex">
-                                    <i class="fas fa-chevron-right"></i>
-                                    <div class="flex-grow-1">Tincidunt sem vel brita bet mala</div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="fas fa-chevron-right"></i>
-                                    <div class="flex-grow-1">Sapien condimentum sacoz sil necr</div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="fas fa-chevron-right"></i>
-                                    <div class="flex-grow-1">Fusce interdum nec ravon fro urna</div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="fas fa-chevron-right"></i>
-                                    <div class="flex-grow-1">Integer pulvinar biolot bat tortor</div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="fas fa-chevron-right"></i>
-                                    <div class="flex-grow-1">Id ultricies fringilla fangor raq trinit</div>
-                                </li>
-                            </ul>
-                            <a id="modalCtaBtn" class="btn-solid-reg" href="#your-link">Details</a>
-                            <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
-                        </div> <!-- end of col -->
-                    </div> <!-- end of row -->
-                </div> <!-- end of modal-content -->
-            </div> <!-- end of modal-dialog -->
-        </div> <!-- end of modal -->
-        <!-- end of details modal -->
-
 
         <!-- Details 2 -->
         <div class="basic-2">
@@ -181,206 +127,18 @@
         </div> <!-- end of basic-2 -->
         <!-- end of details 2 -->
 
-
-        <!-- Testimonials -->
-        <div class="slider-1 bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="h2-heading">Few words from our clients</h2>
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <!-- Card Slider -->
-                        <div class="slider-container">
-                            <div class="swiper-container card-slider">
-                                <div class="swiper-wrapper">
-                                    
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Tortor sodales eget. Vivamus imperdiet leo eu risus tincidunt uris. Proin placerat, urna hendrerit placerat erase convallis</p>
-                                                <p class="testimonial-author">Jude Thorn - Designer</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-            
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Eros volutpat ante mauris euismod sem, ut varius nisi lectus in urna. Integer luctus, nunc eget maximus intem, orci risus</p>
-                                                <p class="testimonial-author">Roy Smith - Developer</p>
-                                            </div>
-                                        </div>        
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-            
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Sed congue ex quam, sit amet venenatis dolor lacinia vulputate. Nunc pulvinar ex ex, sit amet scelerisque tellus pretium semper</p>
-                                                <p class="testimonial-author">Marsha Singer - Marketer</p>
-                                            </div>
-                                        </div>        
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-            
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Etiam est lorem, interdum non semper ut, bibendum vitae ante. Pellente sollicitun sagittis lectus. Aenean in comod</p>
-                                                <p class="testimonial-author">Tim Shaw - Designer</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-            
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Quisque nec turpis placerat, accumsan lorem lobortis, vestibulum elit. Fusce finibus nisl varius semper elementum vivamus</p>
-                                                <p class="testimonial-author">Lindsay Spice - Marketer</p>
-                                            </div>
-                                        </div>        
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-            
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <p class="testimonial-text">Vulputate sed tellus nec, imperdiet luctus purus. Morbi lobortis massa a mi interdum condimentum. Integer non gravida nisi</p>
-                                                <p class="testimonial-author">Ann Blake - Developer</p>
-                                            </div>
-                                        </div>        
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-                                
-                                </div> <!-- end of swiper-wrapper -->
-            
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                                <!-- end of add arrows -->
-            
-                            </div> <!-- end of swiper-container -->
-                        </div> <!-- end of slider-container -->
-                        <!-- end of card slider -->
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of slider-1 -->
-        <!-- end of testimonials -->
-
-
         <!-- Invitation -->
         <div class="basic-3">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4>Ioniq will change the way you think about CRM solutions due to it’s advanced tools and integrated functionalities</h4>
-                        <a class="btn-outline-lg page-scroll" href="{{url('signup')}}">Sign up for free</a>
+                        <h4>Feel free to contact us for more informations</h4>
+                        <a class="btn-outline-lg page-scroll" href="{{url('signup')}}">Fill the form</a>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of basic-3 -->
         <!-- end of invitation -->
-
-
-        <!-- Pricing -->
-        <div id="pricing" class="cards-2 bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="h2-heading">Free forever tier and 2 pro plans</h2>
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Free tier</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
-                                </div>
-                                <ul class="list-unstyled li-space-lg">
-                                    <li>Fusce pulvinar eu mi acm</li>
-                                    <li>Curabitur consequat nisl bro</li>
-                                    <li>Reget facilisis molestie</li>
-                                    <li>Vivamus vitae sem in tortor</li>
-                                    <li>Pharetra vehicula ornares</li>
-                                    <li>Vivamus dignissim sit amet</li>
-                                    <li>Ut convallis aliquama set</li>
-                                </ul>
-                                <div class="price">Free</div>
-                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
-                            </div>
-                        </div>
-                        <!-- end of card -->
-
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Advanced</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
-                                </div>
-                                <ul class="list-unstyled li-space-lg">
-                                    <li>Nunc commodo magna quis</li>
-                                    <li>Lacus fermentum tincidunt</li>
-                                    <li>Nullam lobortis porta diam</li>
-                                    <li>Announcing of invita mro</li>
-                                    <li>Dictum metus placerat luctus</li>
-                                    <li>Sed laoreet blandit mollis</li>
-                                    <li>Mauris non luctus est</li>
-                                </ul>
-                                <div class="price">$19<span>/month</span></div>
-                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
-                            </div>
-                        </div>
-                        <!-- end of card -->
-
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Professional</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
-                                </div>
-                                <ul class="list-unstyled li-space-lg">
-                                    <li>Quisque rutrum mattis</li>
-                                    <li>Quisque tristique cursus lacus</li>
-                                    <li>Interdum sollicitudin maec</li>
-                                    <li>Quam posuerei pellentesque</li>
-                                    <li>Est neco gravida turpis integer</li>
-                                    <li>Mollis felis. Integer id quam</li>
-                                    <li>Id tellus hendrerit lacinia</li>
-                                </ul>
-                                <div class="price">$29<span>/month</span></div>
-                                <a href="{{url('signup')}}" class="btn-solid-reg">Sign up</a>
-                            </div>
-                        </div>
-                        <!-- end of card -->
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-2 -->
-        <!-- end of pricing -->
 
 
         <!-- Questions -->

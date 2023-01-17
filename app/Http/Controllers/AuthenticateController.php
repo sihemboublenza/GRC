@@ -62,7 +62,7 @@ class AuthenticateController extends Controller
     {
         return view('signup');
     }
-
+/*
     function validate_signup(Request $request)
     {
         $request->validate([
@@ -83,7 +83,7 @@ class AuthenticateController extends Controller
 
         return redirect('login')->with('success', 'Registered, you can login');
     }
-
+*/
     function dashboard (Request $request)
     {
         if(Auth::check())
