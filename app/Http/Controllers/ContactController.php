@@ -16,7 +16,6 @@ use Image;
 
 
 
-
 class ContactController extends Controller
 {
     public function index()
@@ -87,9 +86,10 @@ class ContactController extends Controller
         return view('contacts.editprofile',['m'=>$m]);
     }
      public function updateProfile(Request $request, $id)
-    {   $m = DB::table('contact')
+    {    $m = DB::table('contact')
                    ->where('contact.id','=',Auth::guard('front')->id())
                    ->get();
+          
         $contact = Contact::find($id);
         $contact->nom = $request->input('nom');
         $contact->prenom = $request->input('prenom');
@@ -101,7 +101,24 @@ class ContactController extends Controller
         //dd($contact);
         return view('/contacts/profile',['m' => $m]);
     }
-   
+
+   public function updateProfilephoto(Request $request, $id)
+    {   $m = DB::table('contact')
+                   ->where('contact.id','=',Auth::guard('front')->id())
+                   ->get();
+        if($request->hasFile('photo')){
+        $avatar=$request->file('photo');
+        $filename=time() . '.' . $avatar->getClientOriginalExtension();
+        Image::Make($avatar)->resize(300,300)->save(public_path('/telechargement/'. $filename));
+        $ser=Contact::find($id);
+        $ser->photo=$filename;
+        $ser->save();
+
+          }
+        
+        //dd($contact);
+        return view('/contacts/profile',['m' => $m]);
+    }
     public function viewContacts(){ 
 
          $currentCon = DB::table('contact')
@@ -166,15 +183,17 @@ return view('/contacts/facture',['produit'=>$produit]);
 }
 
 
-  /*  public static function authentified_contact_data()
-    {    $currentCon = DB::table('contact')
-        ->where('contact.id','=',Auth::guard('front')->id())
-        ->get();
-       foreach ($currentCon as $c){
-      //  $photo = $currentCon->photo;
-        $nom = $currentCon->nom;
-        $prenom = $currentCon->prenom;}
-        return compact('currentCon');
-    }*/
+  public static function authentified_contact_data(){ 
+   
+    $currentCon = DB::table('contact')
+    ->where('contact.id','=',Auth::guard('front')->id())
+    ->first();
+    // ->toArray()
+    foreach ($currentCon as $c){ 
+    // $photo = $currentCon->photo;
+     $nom = $currentCon->nom;
+      $prenom = $currentCon->prenom;}
+       return compact('currentCon');
+        }
 
 }
