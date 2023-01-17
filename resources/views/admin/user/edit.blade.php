@@ -17,7 +17,7 @@
           <div class="col-xl-6 offset-xl-3">
             <div class="text-box mt-5 mb-5">
               <h4 class="text-center">Modifier utilisateur</h4>
-              <form action="{{ url('userr/' . $users->id) }}" method="post">
+              <form action="{{ url('user/' . $users->id) }}" method="post">
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <label for="floatingInput">Nom</label>
@@ -28,7 +28,7 @@
                 <img src="../public/images/{{$users->photo}}">
                 <input type="file" name="photo" class="form-control" id="floatingInput3"><br>
                 <label for="floatingInput4">Email</label>
-                <input type="nemail" name="email" class="form-control" value="{{$users->email}}" id="floatingInput5"><br>
+                <input type="email" name="email" class="form-control" value="{{$users->email}}" id="floatingInput5"><br>
                 <label for="floatingInput5">Rôle</label>
                 rôle pas fait
                 <div class="col-md-12 text-center">
