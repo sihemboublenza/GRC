@@ -96,10 +96,10 @@ class ContactController extends Controller
         $contact->fonction = $request->input('fonction');
         $contact->tel = $request->input('tel');
         $contact->email = $request->input('email');
-        $contact->password = Hash::make($request->input('password'));
+        $contact->password = bcrypt($request->input('password'));
         $contact->save();
         //dd($contact);
-        return view('/contacts/profile',['m' => $m]);
+        return redirect('/contacts/profile')->with('status','Conatcts Updated Successfully'); 
     }
 
    public function updateProfilephoto(Request $request, $id)
@@ -117,7 +117,7 @@ class ContactController extends Controller
           }
         
         //dd($contact);
-        return view('/contacts/profile',['m' => $m]);
+        return redirect('/contacts/profile')->with('status','Conatcts Updated Successfully'); 
     }
     public function viewContacts(){ 
      

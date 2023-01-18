@@ -16,7 +16,7 @@
               <p> AAAAAA</p>-->
                 <div class="col-md-10 col-md-offset-1"> 
             <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:50px; position: center;"><br><br>
-            <form enctype="multipart/form-data" action="{{url('/contacts/'. $m->id)}}" method="POST"> <br><br><br><br><br><br>
+            <form enctype="multipart/form-data" action="{{route('contact.updatephoto', $m->id)}}" method="POST"> <br><br><br><br><br><br>
                 <label for="img" class="btn btn-info" style="font-size: 0.8rem; position: center; ">Modifier la photo</label>
                 <input type="file" name="photo"  id="img" style="display:none;">
                 <input type="hidden" name="_token"  value="{{ csrf_token() }}">
@@ -85,6 +85,7 @@
                              <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Mot de passe</h6>
+
                                 </div>
                                 
                                 <div class="col-sm-9 text-secondary">
