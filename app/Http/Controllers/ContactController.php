@@ -76,7 +76,7 @@ class ContactController extends Controller
 
 
 
-    public function editProfile($id)
+     public function editProfile($id)
     {   //$m = Contact::find($id);
         $m =DB::table('Contact')
            ->where('contact.id','=',Auth::guard('front')->id())
@@ -120,7 +120,9 @@ class ContactController extends Controller
         return view('/contacts/profile',['m' => $m]);
     }
     public function viewContacts(){ 
-
+     
+     
+        
          $currentCon = DB::table('contact')
           ->where('contact.id','=',Auth::guard('front')->id())
           ->get();

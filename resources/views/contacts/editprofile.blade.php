@@ -5,7 +5,7 @@
 <div class="row">
   <div class="profile-nav col-md-3">
       <div class="panel">
-          <div class="user-heading round">
+          <div class="user-heading round" >
               <!--<a href="#">
                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
               </a>
@@ -14,22 +14,18 @@
 
               <h1></h1>
               <p> AAAAAA</p>-->
-            <div class="col-md-10 col-md-offset-1">
-            <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-            <form enctype="multipart/form-data" action="{{url('/contacts/'. $m->id)}}" method="POST">
-                <label>Update Profile Image</label>
-                <input type="file" name="photo">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="col-md-10 col-md-offset-1"> 
+            <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:50px; position: center;"><br><br>
+            <form enctype="multipart/form-data" action="{{url('/contacts/'. $m->id)}}" method="POST"> <br><br><br><br><br><br>
+                <label for="img" class="btn btn-info" style="font-size: 0.8rem; position: center; ">Modifier la photo</label>
+                <input type="file" name="photo"  id="img" style="display:none;">
+                <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                 <br><br>
-                <input type="submit" class="btn-primary" >
+                <input style="width: 80%;height: 2.25rem;border: 1px solid  #797979;border-radius: 80px;color: #808080;font-weight: 600;font-size: 0.875rem; position: center;" type="submit" name="submit" value="Soumettre">
             </form>
-        </div>
           
                  
-                                <div class="mt-3">
-
-                                    <h4>{{$m->nom}} {{$m->prenom}}</h4>
-                                    
+                                                                   
                                     
                                 </div>
                             </div>
@@ -113,8 +109,10 @@
                                 <div class="col-sm-9 text-secondary">
                                 
                                 </div>
-                                 <input class="form-control-submit-button pull-right" type="submit" name="" value="Modifier">
-                                 <a href="{{route('contacts.profil')}}"class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</a>
+                                 <input class="form-control-submit-button pull-right" type="submit" name="submit" value="Modifier">
+            <i class="fas fa-user-plus amber-text input-box-icon" style="color:white"></i>
+
+                                 <button type="button" style="display: inline-block;width: 25%;height: 3.25rem;border: 1px solid #f25c05;border-radius: 30px;background-color: #ffffff;color: #ffffff;font-weight: 600;font-size: 0.875rem;line-height: 0;cursor: pointer;transition: all 0.2s;"><a href="{{route('contacts.profil')}}" style=" text-decoration: none; color: #f25c05;">Annuler</a></button>
 
                               </form>
 

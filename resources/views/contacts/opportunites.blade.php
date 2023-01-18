@@ -41,7 +41,7 @@
                       <td>{{$opportunite->montant}} DA</td>
                       <td>{{$opportunite->etape}}</td>
                       <td>{{$opportunite->date_de_cloture}}</td>
-                      <td><a href="{{ route('contact.viewFacture', $opportunite->nom_opp) }}" class="btn btn-sm btn-primary">Détails</a></td>
+                      <td><a href="{{ route('contact.viewFacture', $opportunite->nom_opp) }}" class="btn btn-sm btn-primary">Facture</a></td>
                      
                       </tr>
 					            @endforeach

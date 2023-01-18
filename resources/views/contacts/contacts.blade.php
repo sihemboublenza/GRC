@@ -86,33 +86,24 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
           <table class="table" id="dataTable">
             <thead class="thead-light">
               <tr>
+                <th>Photo</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
-
                 <th>Fonction</th>
                 <th>Téléphone</th>
-
-                <th>Actions</th>
                 <th/>
               </tr>
             </thead>
             <tbody>
-            <tr>                      
-	            @foreach($contacts as $item)
-              
+	            @foreach($contacts as $item)             
               <tr>
+               <td><img src="/telechargement/{{ $item->photo }}" style="width:80px; height:80px; float:center; border-radius:30%; margin-right:25px;"></td>
               <td>{{$item->nom}}</td>
               <td>{{$item->prenom}}</td>
               <td>{{$item->email}}</td>
-
               <td>{{$item->fonction}}</td>
-              <td>{{$item->tel}}</td>
-
-
-
-              <td><a href="{{ url('/contact/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
-             
+              <td>{{$item->tel}}</td>                 
               </tr>
              
 	            @endforeach

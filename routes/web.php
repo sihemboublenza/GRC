@@ -51,10 +51,6 @@ Route::post('contacted', 'contacted')->name('prospect.contacted');
 
 
 
-/*Route::get('/contact/profile', function () {
-    return view('/contact/profile');
-});*/
-
 Route::get('/contacts/profile', 'App\Http\Controllers\AuthenticateController@validate_login')->name('contact.profile');
 Route::get('/contacts/profile', 'App\Http\Controllers\ContactController@Profile')->name('contacts.profil');
 Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@editProfile')->name('contact.edit');

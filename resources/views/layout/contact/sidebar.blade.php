@@ -9,13 +9,13 @@
 
       <li class="nav-item">
         <a class="nav-link"  href="{{url('/contacts/contacts')}}">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>Contacts</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('/contacts/opportunites')}}">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Opportunités</span>
         </a>
       </li>

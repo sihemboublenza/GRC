@@ -8,9 +8,8 @@
           <div class="user-heading round">
              @foreach ($m as $m)
               <div class="col-md-10 col-md-offset-1"> 
-                  <img src="/telechargement/{{ $m->photo }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-                <span class="user_img"></span>
-                 <h1>{{$m->nom}} {{$m->prenom}}</h1>
+                  <img src="/telechargement/{{ $m->photo }}" style="width:160px; height:160px; float:left; border-radius:50%; margin-right:25px;">
+                 <h5>{{$m->nom}} {{$m->prenom}}</h5>
             </div>
           </div>
 
@@ -166,6 +165,7 @@ body {
     font-size: 22px;
     font-weight: 300;
     margin-bottom: 5px;
+
 }
 
 .profile-nav .user-heading p {
@@ -308,6 +308,7 @@ body {
     font-weight: 300;
     margin-top: 0;
     color: #c3c3c3;
+    text-align: center;
 }
 
 .summary-head {

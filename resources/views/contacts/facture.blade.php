@@ -33,10 +33,10 @@
                                     <td class="text-center">{{$produit->description}}</td>
                                     <td class="text-center">{{$produit->prix}}</td>
                                     <?php
-                          $t=((float)($produit->prix)*((float)($produit->quanite)));
+                          $t=((float)($produit->prix)*((float)($produit->quantite)));
                           $somme+=$t;
                           ?>
-                                    <td class="text-center">{{$produit->quanite}}</td>
+                                    <td class="text-center">{{$produit->quantite}}</td>
 
                                     <td class="text-right"><?php echo "$t" ?></td>
                                 </tr>
