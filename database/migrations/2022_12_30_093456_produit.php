@@ -20,10 +20,10 @@ return new class extends Migration
 		 
 		$table->id('id');
         $table->string('nom');
-		$table->string('description');
-		$table->string('photo')->default('default.jpg');
+        $table->string('description')->nullable();
+		$table->string('photo')->default('default.png');
 	    $table->double('prix');
-		$table->integer('quanite');
+		$table->integer('quantite');
         $table->timestamps();	
 		
     });

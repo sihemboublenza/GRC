@@ -16,6 +16,12 @@ class ProduitController extends Controller
         }
         else return redirect ('dashboard')->with('success', 'You are not admin');
     }
+
+    public function list()
+    {
+        $produits = Produit::all();
+        return view('products')->with('produits', $produits);
+    }
     public function show($id)
     {
         if (AuthenticateController::isAdmin())

@@ -1,4 +1,4 @@
-   @extends('mastercontact')
+@extends('layout.contact.index')
 @section('content')
 <div class="container-fluid" id="container-wrapper">
 <div class="container-fluid" id="container-wrapper">

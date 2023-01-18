@@ -23,11 +23,12 @@ return new class extends Migration
 		$table->string('fonction');
 		$table->string('email');
 		$table->string('tel',10);
-		$table->string('adresse');
-		$table->string('siteweb');
+		$table->string('adresse')->nullable();
+		$table->string('siteweb')->nullable();
 		$table->enum('statut', ['Chaud','Froid']);
 		$table->enum('source', ['Web','Téléphone','Partenaire','Salon','Bouche à oreille','Liste prospects','Autre']);
-        $table->timestamps();		
+        $table->timestamps();
+        $table->boolean('transformed')->default(0);
     });
 	}
 

@@ -21,8 +21,8 @@ class ContactController extends Controller
     public function index()
     {
       
-        $client = Client::all(); 
-        $contacts = Contact::join('client','client.id','=','contact.client')
+        $contacts = Contact::all(); 
+        $client = Client::join('contact','contact.client','=','client.id')
             ->get();   
         return view ('admin.contact.list', ['contacts' => $contacts],['client' => $client]);
     }

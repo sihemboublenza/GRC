@@ -18,7 +18,7 @@ return new class extends Migration
 		$table->id('id');
 		$table->string('nom_opp');
 		$table->double('montant');
-		$table->enum('etape',['Prospection','Proposition/Devis','Négociation/Vérification','Cloturée/Ganée','Cloturée/Perdue']);
+		$table->enum('etape',['Prospection','Proposition/Devis','Négociation/Vérification','Cloturée/Gagnée','Cloturée/Perdue']);
 		$table->date('date_de_cloture');
 	    $table->unsignedBigInteger('client')->nullable()->index();
         $table->timestamps();
