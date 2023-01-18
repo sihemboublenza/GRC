@@ -4,7 +4,10 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active" aria-current="page">Clients</li>
+      <li class="breadcrumb-item">Opportunités</li>
+      <li class="breadcrumb-item" >{{$opp->nom_opp}}</li>
+      <li class="breadcrumb-item">Produits</li>
+      <li class="breadcrumb-item active" aria-current="page">Modifier</li>
     </ol>
   </div>
 
@@ -16,17 +19,14 @@
         <div class="mb-4 form-floating">
           <div class="col-xl-6 offset-xl-3">
             <div class="text-box mt-5 mb-5">
-              <h4 class="text-center">Ajouter client</h4>
-              <form action="{{ url('client/') }}" method="post">
+              <h4 class="text-center">Modifier produit</h4>
+              <form action="{{ url('opportunite/produits') }}" method="post">
                 {!! csrf_field() !!}
-                <label for="floatingInput">Société</label>
-                <input type="text" name="societe" class="form-control" id="floatingInput"><br>
-                <label for="floatingInput2">Téléphone</label>
-                <input type="tel" name="tel" class="form-control" id="floatingInput2"><br>
-                <label for="floatingInput3">Adresse</label>
-                <input type="text" name="adresse" class="form-control" id="floatingInput3"><br>
-                <label for="floatingInput4">Site Web</label>
-                <input type="text" name="siteweb" class="form-control" id="floatingInput4"><br>
+                <label for="floatingInput">Produit</label>
+                <input type="text" name="produit" class="form-control" id="floatingInput" value="{{}}" disabled>
+                <label for="floatingInput2">Quantité</label>
+                <input type="text" name="quantite" class="form-control" id="floatingInput2" value=""><br>
+                <input type="number" name="opportunite" hidden value="{{$opp->id}}"/>
                 <br>
                 <div class="col-md-12 text-center">
                   <input type="submit" value="Ajouter" class="btn btn-success col-5">
@@ -38,5 +38,4 @@
       </div>
     </div>
   </div>
-
 @endsection

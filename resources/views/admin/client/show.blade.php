@@ -4,7 +4,8 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active" aria-current="page">Clients</li>
+      <li class="breadcrumb-item">Clients</li>
+      <li class="breadcrumb-item active" aria-current="page">{{$clients->societe}}</li>
     </ol>
   </div>
 
@@ -26,6 +27,10 @@
                 <label for="floatingInput4">Site Web</label>
                 <input type="email" name="siteweb" class="form-control" value="{{$clients->siteweb}}" id="floatingInput4" disabled><br>
                 <br>
+                <div class="col-md-12 text-center">
+                  <a href="{{ url('/client/' . $clients->id . '/mastercontact/') }}" class="btn btn-sm btn-primary col-3">Contacts liés</a>
+                  <a href="{{ url('/client/' . $clients->id . '/masteropportunite/') }}" class="btn btn-sm btn-primary col-3">Opportunités liées</a>
+                </div>
             </div>
           </div>
         </div>

@@ -4,6 +4,8 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
+      <li class="breadcrumb-item">Clients</li>
+      <li class="breadcrumb-item" >{{$client->societe}}</li>
       <li class="breadcrumb-item active" aria-current="page">Contacts</li>
     </ol>
   </div>
@@ -14,10 +16,7 @@
     <div class="col-lg-12">
       <div class="card mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h4 class="m-0 font-weight-bold text-primary"> les contacts de la société </h4>
-        </div>
-        <div class="col-md-12 text-right">
-          <a href="{{ url('/contact/create') }}" class="btn btn-success">Ajouter</a>
+          <h4 class="m-0 font-weight-bold text-primary">Contacts de la société <u>{{$client->societe}}</u></h4>
         </div>
         <div class="p-3 table-responsive">
           <table class="table" id="dataTable">
@@ -26,7 +25,6 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Fonction</th>
-                <th>Société</th>
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th/>
@@ -41,7 +39,6 @@
               <td>{{$item->nom}}</td>
               <td>{{$item->prenom}}</td>
               <td>{{$item->fonction}}</td>
-              <td></td>
               <td>{{$item->email}}</td>
               <td>{{$item->tel}}</td>
               <td><a href="{{ url('/contact/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>

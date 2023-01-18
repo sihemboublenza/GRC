@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\Opportunite;
 
 class ClientController extends Controller
 {
@@ -45,13 +46,24 @@ class ClientController extends Controller
         Client::destroy($id);
         return redirect('client')->with('flash_message', 'Client supprimé !');
     }
-    public function mastercontact($id,Request $request){
-    
-        if(Client::where('id',$id)->exists()){
-
-        $client = Client::where("client.id","=",$id)->first();
-        $contact= Contact::where('client',"=",$client->id)->get();
-        return view('admin.client.mastercontact', ['contact' => $contact,'client'=>$client ]);       }
+    public function mastercontact($id,Request $request)
+    {
+        if(Client::where('id',$id)->exists())
+        {
+            $client = Client::where("client.id","=",$id)->first();
+            $contact= Contact::where('client',"=",$client->id)->get();
+            return view('admin.client.mastercontact', ['contact' => $contact,'client'=>$client ]);
+        }
+        else return redirect()->back();
+    }
+    public function masteropportunite($id,Request $request)
+    {
+        if(Client::where('id',$id)->exists())
+        {
+            $client = Client::where("client.id","=",$id)->first();
+            $opp= Opportunite::where('client',"=",$client->id)->get();
+            return view('admin.client.masteropportunite', ['opp' => $opp,'client'=>$client ]);
+        }
         else return redirect()->back();
     }
 }

@@ -17,7 +17,7 @@
           <h4 class="m-0 font-weight-bold text-primary">Clients</h4>
         </div>
         <div class="col-md-12 text-right">
-          <a href="{{ url('/client/create') }}" class="btn btn-success">Ajouter</a>
+          <a href="{{ url('/client/create') }}" class="btn btn-success col-2">Ajouter</a>
         </div>
         <div class="p-3 table-responsive">
           <table class="table" id="dataTable">
@@ -41,7 +41,6 @@
               <td>{{$item->adresse}}</td>
               <td>{{$item->siteweb}}</td>
               <td><a href="{{ url('/client/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
-               <td><a href="{{ url('/client/' . $item->id . '/mastercontact/') }}" class="btn btn-sm btn-primary">View</a></td>
               <td><a href="{{ url('/client/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
               <td><form method="POST" action="{{ url('/client' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                       {{ method_field('DELETE') }}

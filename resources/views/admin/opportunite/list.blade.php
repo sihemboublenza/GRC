@@ -17,7 +17,7 @@
           <h4 class="m-0 font-weight-bold text-primary">Opportunités</h4>
         </div>
         <div class="col-md-12 text-right">
-          <a href="{{ url('/opportunite/create') }}" class="btn btn-success">Ajouter</a>
+          <a href="{{ url('/opportunite/create') }}" class="btn btn-success col-2">Ajouter</a>
         </div>
         <div class="p-3 table-responsive">
           <table class="table" id="dataTable">
@@ -36,7 +36,7 @@
             <tr>                      
 	            @foreach($opportunites as $item)
               <tr>
-              <td>{{$item->nom}}</td>
+              <td>{{$item->nom_opp}}</td>
               <td>{{$item->montant}}</td>
               <td>{{$item->etape}}</td>
               <td>{{$item->date_de_cloture}}</td>

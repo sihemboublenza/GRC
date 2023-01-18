@@ -8,6 +8,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RdvController;
 use App\Http\Controllers\OpportuniteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Opp_prodController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -60,17 +61,13 @@ Route::get('contacts/{id}/editprofile', 'App\Http\Controllers\ContactController@
 Route::put('contacts/{id}', 'App\Http\Controllers\ContactController@updateProfile')->name('contact.update');
 Route::get('/contacts/contacts', 'App\Http\Controllers\ContactController@viewContacts');
 Route::get('/client/{id}/mastercontact', 'App\Http\Controllers\ClientController@mastercontact')->name('client.mastercontact');
+Route::get('/client/{id}/masteropportunite', 'App\Http\Controllers\ClientController@masteropportunite')->name('client.masteropportunite');
+Route::get('/opportunite/{id}/masterproduit', 'App\Http\Controllers\OpportuniteController@masterproduit')->name('opportunite.masterproduit');
+Route::get('/opportunite/{id}/masterproduit/create', 'App\Http\Controllers\Opp_prodController@create')->name('opportunie.produits.create');
 Route::get('/prospect/{id}/transforme', 'App\Http\Controllers\ProspectController@transforme')->name('prospect.transforme');
 Route::get('/contacts/opportunites', 'App\Http\Controllers\ContactController@viewOpportunites');
 Route::get('/contacts/facture/{nom_opp}', 'App\Http\Controllers\ContactController@viewFacture')->name('contact.viewFacture');
 
-Route::get('/test', function () {
-    return view('home');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 Route::resource('/prospect', ProspectController::class);
 
@@ -83,6 +80,8 @@ Route::resource('/rdv', RdvController::class);
 Route::resource('/opportunite', OpportuniteController::class);
 
 Route::resource('/produit', ProduitController::class);
+
+Route::resource('/opportunite/produits', Opp_prodController::class);
 
 Route::resource('/user', UserController::class);
 

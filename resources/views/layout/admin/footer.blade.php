@@ -21,6 +21,3 @@
     </div>
   </div>
 </div>
-
-      <footer class="sticky-footer bg-white">
-      </footer>

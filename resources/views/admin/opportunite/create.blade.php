@@ -20,19 +20,26 @@
               <form action="{{ url('opportunite/') }}" method="post">
                 {!! csrf_field() !!}
                 <label for="floatingInput">Nom</label>
-                <input type="text" name="nom" class="form-control" id="floatingInput"><br>
-                <label for="floatingInput2">Montant</label>
-                <input type="number" name="montant" class="form-control" id="floatingInput2"><br>
-                <label for="floatingInput3">Étape</label>
-                <input type="text" name="etape" class="form-control" id="floatingInput3"><br>
-                <label for="floatingInput4">Date de cloture</label>
-                <input type="date" name="date_de_cloture" class="form-control" id="floatingInput4"><br>
-              
-                <label for="floatingInput4">Produit</label>
-                <input type="text" name="produit" class="form-control" id="floatingInput4" ><br>
+                <input type="text" name="nom_opp" class="form-control" id="floatingInput"><br>
+                <label for="floatingInput2">Étape</label>
+                <select name="etape" class="form-control">
+                  <option value="Prospection">Prospection</option>
+                  <option value="Proposition/Devis">Proposition/Devis</option>
+                  <option value="Négociation/Vérification">Négociation/Vérification</option>
+                  <option value="Cloturée/Gagnée">Cloturée/Gagnée</option>
+                  <option value="Cloturée/Perdue">Cloturée/Perdue</option>
+                </select><br>
+                <label for="floatingInput3">Date de cloture</label>
+                <input type="date" name="date_de_cloture" class="form-control" id="floatingInput5"><br>              
+                <label for="floatingInput4">Client</label>
+                <select class="form-control" id="floatingInput4" name="client">
+                      @foreach($client as $client)
+                    <option value="{{$client->id}}">{{$client->societe}}</option>
+                      @endforeach
+               </select><br>
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Ajouter" class="btn btn-success">
+                  <input type="submit" value="Ajouter" class="btn btn-success col-5">
                 </div>
               </form>
             </div>

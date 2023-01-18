@@ -4,7 +4,8 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active" aria-current="page">Prospects</li>
+      <li class="breadcrumb-item">Prospects</li>
+      <li class="breadcrumb-item active" aria-current="page">{{$prospects->nom}} {{$prospects->prenom}}</li>
     </ol>
   </div>
 

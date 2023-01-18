@@ -17,7 +17,7 @@
           <h4 class="m-0 font-weight-bold text-primary">Produits</h4>
         </div>
         <div class="col-md-12 text-right">
-          <a href="{{ url('/produit/create') }}" class="btn btn-success">Ajouter</a>
+          <a href="{{ url('/produit/create') }}" class="btn btn-success col-2">Ajouter</a>
         </div>
         <div class="p-3 table-responsive">
           <table class="table" id="dataTable">

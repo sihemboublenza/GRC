@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Opportunite extends Model
+class Opp_prod extends Model
 {
   use HasFactory;
-	 protected $table = 'opportunite';
+	 protected $table = 'opp_prod';
 	 protected $primarykey = 'id';
   protected $fillable =[
-  'nom_opp',
-  'montant',
-  'etape',
-  'date_de_cloture',
-  'client',
+  'opportunite',
+  'produit',
+  'qte',
   ];
   }

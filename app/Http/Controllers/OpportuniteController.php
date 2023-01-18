@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Opp_prod;
 use Illuminate\Http\Request;
 use App\Models\Opportunite;
+use App\Models\Client;
+use App\Models\Produit;
+use Illuminate\Support\Facades\DB;
 
 class OpportuniteController extends Controller
 {
@@ -19,7 +23,8 @@ class OpportuniteController extends Controller
     }
     public function create()
     {
-        return view('admin.opportunite.create');
+        $client = Client::all();
+        return view('admin.opportunite.create', ['client' => $client]);
     }
     public function store(Request $request)
     {
@@ -30,7 +35,8 @@ class OpportuniteController extends Controller
     public function edit($id)
     {
         $opportunites = Opportunite::find($id);
-        return view('admin.opportunite.edit')->with('opportunites', $opportunites);
+        $client = Client::all();
+        return view('admin.opportunite.edit', ['opportunites'=> $opportunites, 'client' => $client]);
     }
     public function update(Request $request, $id)
     {
@@ -43,5 +49,15 @@ class OpportuniteController extends Controller
     {
         Opportunite::destroy($id);
         return redirect('opportunite')->with('flash_message', 'Opportunité supprimé !');
+    }
+    public function masterproduit($id, Request $request)
+    {
+        $opp = Opportunite::find($id); 
+        $list = DB::table('opportunite')
+            ->join('opp_prod','opp_prod.opportunite','=','opportunite.id')
+            ->where('opportunite.id', '=', $id)
+            ->join('produit','produit.id','=','opp_prod.produit')
+            ->get();
+        return view ('admin.opportunite.masterproduit', ['list' => $list],['opp' => $opp]);
     }
 }

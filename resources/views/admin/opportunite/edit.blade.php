@@ -4,7 +4,8 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active" aria-current="page">Opportunités</li>
+      <li class="breadcrumb-item active">Opportunités</li>
+      <li class="breadcrumb-item active" aria-current="page" >{{$opportunites->nom}}</li>
     </ol>
   </div>
 
@@ -21,20 +22,26 @@
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <label for="floatingInput">Nom</label>
-                <input type="text" name="nom" class="form-control" value="{{$opportunites->nom}}" id="floatingInput"><br>
-                <label for="floatingInput2">Montant</label>
-                <input type="number" name="montant" class="form-control" value="{{$opportunites->montant}}" id="floatingInput2"><br>
-                <label for="floatingInput3">Étape</label>
-                <input type="text" name="etape" class="form-control" value="{{$opportunites->etape}}" id="floatingInput3"><br>
-                <label for="floatingInput4">Date de cloture</label>
-                <input type="date" name="date_de_cloture" class="form-control" value="{{$opportunites->date_de_cloture}}" id="floatingInput4"><br>
+                <input type="text" name="nom_opp" class="form-control" value="{{$opportunites->nom_opp}}" id="floatingInput"><br>
+                <label for="floatingInput2">Étape</label>
+                <select name="etape" class="form-control">
+                  <option value="Prospection">Prospection</option>
+                  <option value="Proposition/Devis">Proposition/Devis</option>
+                  <option value="Négociation/Vérification">Négociation/Vérification</option>
+                  <option value="Cloturée/Gagnée">Cloturée/Gagnée</option>
+                  <option value="Cloturée/Perdue">Cloturée/Perdue</option>
+                </select><br>
+                <label for="floatingInput3">Date de cloture</label>
+                <input type="date" name="date_de_cloture" class="form-control" value="{{$opportunites->date_de_cloture}}" id="floatingInput3"><br>
                 <label for="floatingInput4">Client</label>
-                <input type="text" name="client" class="form-control" value="{{$opportunites->client}}" id="floatingInput4" ><br>
-                <label for="floatingInput4">Produit</label>
-                <input type="text" name="produit" class="form-control" value="{{$opportunites->produit}}" id="floatingInput4" ><br>
+                <select class="form-control" id="floatingInput5" name="client">
+                      @foreach($client as $client)
+                    <option value="{{$client->id}}">{{$client->societe}}</option>
+                      @endforeach
+               </select>
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Modifier" class="btn btn-warning">
+                  <input type="submit" value="Modifier" class="btn btn-warning col-5">
                 </div>
               </form>
             </div>

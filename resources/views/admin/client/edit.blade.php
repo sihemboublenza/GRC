@@ -4,7 +4,8 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active" aria-current="page">Clients</li>
+      <li class="breadcrumb-item">Clients</li>
+      <li class="breadcrumb-item active" aria-current="page" >{{$clients->societe}}</li>
     </ol>
   </div>
 
@@ -30,7 +31,7 @@
                 <input type="text" name="siteweb" class="form-control" value="{{$clients->siteweb}}" id="floatingInput4"><br>
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Modifier" class="btn btn-warning">
+                  <input type="submit" value="Modifier" class="btn btn-warning col-5">
                 </div>
               </form>
             </div>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id('id');
             $table->unsignedBigInteger('opportunite')->nullable()->index();
             $table->unsignedBigInteger('produit')->nullable()->index();
-
+            $table->unsignedBigInteger('qte')->nullable();
             $table->timestamps();
      
        });
