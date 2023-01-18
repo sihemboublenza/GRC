@@ -1,22 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Opportunite;
 use Illuminate\Http\Request;
+use DB;
 
 class GoogleGraphController extends Controller
 {
-  function index()
-$data = DB::table('opportunite')
-->select(
-DB::raw('id as id'),
-::raw('count(*) as number'))
-->groupBy('id')
-->get();
-$array[] = ['id', 'Number'];
-foreach($data as $key => $value)
-{
-$array[++$key] = [$value->id, $value->number];}
-return view('google_pie_chart')->with('id', json_encode($array));
-}
+  function index(){
 
+                foreach(DB::table('opportunite')->select(
+                DB::raw("etape as etape"))
+                DB::raw("COUNT(*) as number"), 
+                ->groupBy("etape")
+                ->get();
+                $array[]=['Etape', 'Number'];
+                foreach($data as $key => $value){
+                  array[++$key]=[$value->etape , $value->number ];
+                }
+                return view('index')->with('etape', json_encode($array));
+
+    }

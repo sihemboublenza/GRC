@@ -14,219 +14,63 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+-- Listage des données de la table grc.client : ~3 rows (environ)
+INSERT INTO `client` (`id`, `societe`, `tel`, `adresse`, `siteweb`, `prospect`, `created_at`, `updated_at`) VALUES
+	(5, 'sonelgaz', 543345678, 'France', 'boldgoergia.fr', NULL, '2023-01-16 21:09:57', '2023-01-16 21:09:57'),
+	(7, 'chiali', 65678900, 'sba', 'chiali.com', NULL, '2023-01-16 21:20:16', '2023-01-16 21:20:16'),
+	(8, 'telecom', 600590404, 'IMAMA', 'sihem.com', NULL, '2023-01-16 21:21:05', '2023-01-16 21:21:05');
 
--- Listage de la structure de la base pour grc
-DROP DATABASE IF EXISTS `grc`;
-CREATE DATABASE IF NOT EXISTS `grc` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `grc`;
-
--- Listage de la structure de table grc. clients
-DROP TABLE IF EXISTS `clients`;
-CREATE TABLE IF NOT EXISTS `clients` (
-  `id_client` int unsigned NOT NULL,
-  `societe_client` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `tel_client` int DEFAULT NULL,
-  `adresse_client` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `siteweb_client` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  PRIMARY KEY (`id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Listage des données de la table grc.clients : ~1 rows (environ)
-DELETE FROM `clients`;
-INSERT INTO `clients` (`id_client`, `societe_client`, `tel_client`, `adresse_client`, `siteweb_client`) VALUES
-	(1, 'Sonatrach', 770000000, 'Hydra, Alger', 'www.sonatrach.dz');
-
--- Listage de la structure de table grc. contacts
-DROP TABLE IF EXISTS `contacts`;
-CREATE TABLE IF NOT EXISTS `contacts` (
-  `id` int unsigned NOT NULL,
-  `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `prenom` varchar(50) DEFAULT NULL,
-  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `password` varchar(64) DEFAULT NULL,
-  `tel` int DEFAULT NULL,
-  `fonction` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `id_client` int unsigned DEFAULT NULL,
-  `image` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'default.png',
-  `source` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `statut` enum('Chaud','Froid') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Froid',
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `id_client` (`id_client`),
-  CONSTRAINT `FK_contact_client` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Listage des données de la table grc.contacts : ~1 rows (environ)
-DELETE FROM `contacts`;
-INSERT INTO `contacts` (`id`, `nom`, `prenom`, `email`, `password`, `tel`, `fonction`, `id_client`, `image`, `source`, `statut`) VALUES
-	(1, 'Test', 'testouille', 'contact', '$2y$10$kaPk4n60AEUe9QrpQqfnFOYRUPw7KfZ487/R1SwJFtfaKQK1W0/NW', 770000000, 'f', 1, 'default.png', NULL, 'Froid');
-
--- Listage de la structure de table grc. failed_jobs
-DROP TABLE IF EXISTS `failed_jobs`;
-CREATE TABLE IF NOT EXISTS `failed_jobs` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Listage des données de la table grc.contact : ~2 rows (environ)
+INSERT INTO `contact` (`id`, `nom`, `prenom`, `fonction`, `tel`, `email`, `password`, `client`, `created_at`, `updated_at`) VALUES
+	(2, 'djamila', 'cherif', 'ji', 6789, 'djamila@gmail.com', 'djamiladjamila', 8, NULL, NULL),
+	(8, 'sihem', 'boublenza', 'info', 600590404, 'sihemboublenza@gmail.com', '', 8, '2023-01-16 21:21:05', '2023-01-16 21:21:05');
 
 -- Listage des données de la table grc.failed_jobs : ~0 rows (environ)
-DELETE FROM `failed_jobs`;
 
--- Listage de la structure de table grc. migrations
-DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE IF NOT EXISTS `migrations` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Listage des données de la table grc.migrations : ~4 rows (environ)
-DELETE FROM `migrations`;
+-- Listage des données de la table grc.migrations : ~12 rows (environ)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2014_10_12_100000_create_password_resets_table', 1),
 	(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-	(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+	(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+	(5, '2022_12_30_093228_prospect', 1),
+	(6, '2022_12_30_093348_client', 1),
+	(7, '2022_12_30_093409_contact', 1),
+	(8, '2022_12_30_093432_oppurtunite', 1),
+	(9, '2022_12_30_093456_produit', 1),
+	(10, '2022_12_30_093515_rdv', 1),
+	(11, '2022_12_30_093432_opportunite', 2),
+	(12, '2023_01_14_212513_opp_prod', 3);
 
--- Listage de la structure de table grc. opportunites
-DROP TABLE IF EXISTS `opportunites`;
-CREATE TABLE IF NOT EXISTS `opportunites` (
-  `id_opp` int unsigned NOT NULL,
-  `nom_opp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `prenom_opp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `etape_opp` varchar(50) DEFAULT NULL,
-  `date_de_cloture` date DEFAULT NULL,
-  `id_client` int unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_opp`),
-  KEY `id_client` (`id_client`),
-  CONSTRAINT `FK_opportunite_client` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-- Listage des données de la table grc.opportunite : ~3 rows (environ)
+INSERT INTO `opportunite` (`id`, `nom`, `montant`, `etape`, `date_de_cloture`, `client`, `produit`, `created_at`, `updated_at`) VALUES
+	(5, 'salaouatchi mouna', 67, 2, '2023-01-05', 7, 'pc', '2023-01-03 21:12:35', '2023-01-03 21:15:34'),
+	(6, 'siiss', 679, 3, '2022-12-18', 5, 'pc', '2023-01-18 22:30:44', '2023-01-18 22:30:43'),
+	(7, 'MER', 654, 7, '2023-03-18', 8, 'pc', '2023-01-18 22:30:39', '2023-01-18 22:30:42');
 
--- Listage des données de la table grc.opportunites : ~1 rows (environ)
-DELETE FROM `opportunites`;
-INSERT INTO `opportunites` (`id_opp`, `nom_opp`, `prenom_opp`, `etape_opp`, `date_de_cloture`, `id_client`) VALUES
-	(1, 'test', 'test', 'test', '2022-12-10', 1);
-
--- Listage de la structure de table grc. password_resets
-DROP TABLE IF EXISTS `password_resets`;
-CREATE TABLE IF NOT EXISTS `password_resets` (
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  KEY `password_resets_email_index` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Listage des données de la table grc.opp_prod : ~0 rows (environ)
 
 -- Listage des données de la table grc.password_resets : ~0 rows (environ)
-DELETE FROM `password_resets`;
-
--- Listage de la structure de table grc. personal_access_tokens
-DROP TABLE IF EXISTS `personal_access_tokens`;
-CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint unsigned NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `last_used_at` timestamp NULL DEFAULT NULL,
-  `expires_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Listage des données de la table grc.personal_access_tokens : ~0 rows (environ)
-DELETE FROM `personal_access_tokens`;
 
--- Listage de la structure de table grc. produits
-DROP TABLE IF EXISTS `produits`;
-CREATE TABLE IF NOT EXISTS `produits` (
-  `id_pro` int unsigned NOT NULL,
-  `nom_pro` varchar(50) DEFAULT NULL,
-  `description_pro` varchar(50) DEFAULT NULL,
-  `image_pro` varchar(200) DEFAULT NULL,
-  `prix_pro` int DEFAULT NULL,
-  `quatite_pro` int DEFAULT NULL,
-  PRIMARY KEY (`id_pro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-- Listage des données de la table grc.produit : ~1 rows (environ)
+INSERT INTO `produit` (`id`, `nom`, `description`, `photo`, `prix`, `quanite`, `created_at`, `updated_at`) VALUES
+	(1, 'PC', 'I5', 'default.jpg', 67900, 1, NULL, NULL);
 
--- Listage des données de la table grc.produits : ~0 rows (environ)
-DELETE FROM `produits`;
-INSERT INTO `produits` (`id_pro`, `nom_pro`, `description_pro`, `image_pro`, `prix_pro`, `quatite_pro`) VALUES
-	(1, 'fd', 'gdfgd', 'gfdg.png', 24121, 12);
+-- Listage des données de la table grc.prospect : ~3 rows (environ)
+INSERT INTO `prospect` (`id`, `nom`, `prenom`, `societe`, `fonction`, `email`, `tel`, `adresse`, `siteweb`, `statut`, `source`, `est_transmit`, `created_at`, `updated_at`) VALUES
+	(2, 'Bold', 'Georgiaa', 'sonelgaz', 'comptable', 'boldgeorgia@gmail.com', '0543345678', 'France', 'boldgoergia.fr', 'Chaud', 'froid', _binary 0x3100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, '2023-01-02 13:54:38', '2023-01-16 21:19:08'),
+	(3, 'djawed', 'boublenza', 'blenz', 'ingénieur d\'état', 'boublenzadjawed@gmail.com', '0664345678', 'Imama, Tlemcen', 'lablenzdjawad.com', 'Chaud', 'chaud', NULL, '2023-01-03 19:56:29', '2023-01-15 17:34:50'),
+	(5, 'sihem', 'boublenza', 'telecom', 'info', 'sihemboublenza@gmail.com', '0600590404', 'IMAMA', 'sihem.com', 'Chaud', 'froid', _binary 0x3100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, '2023-01-16 21:21:00', '2023-01-16 21:21:05');
 
--- Listage de la structure de table grc. prospects
-DROP TABLE IF EXISTS `prospects`;
-CREATE TABLE IF NOT EXISTS `prospects` (
-  `id_p` int unsigned NOT NULL,
-  `nom_p` varchar(50) DEFAULT NULL,
-  `prenom_p` varchar(50) DEFAULT NULL,
-  `societe_p` varchar(50) DEFAULT NULL,
-  `fonction_p` varchar(50) DEFAULT NULL,
-  `email_p` varchar(50) DEFAULT NULL,
-  `tel_p` int DEFAULT NULL,
-  `adresse_p` varchar(50) DEFAULT NULL,
-  `siteweb_p` varchar(50) DEFAULT NULL,
-  `statut` varchar(50) DEFAULT NULL,
-  `source` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_p`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Listage des données de la table grc.prospects : ~0 rows (environ)
-DELETE FROM `prospects`;
-INSERT INTO `prospects` (`id_p`, `nom_p`, `prenom_p`, `societe_p`, `fonction_p`, `email_p`, `tel_p`, `adresse_p`, `siteweb_p`, `statut`, `source`) VALUES
-	(1, 'sdf', 'gdfgd', 'Sonatrach', 'f', 'ff@s.fd', 777000000, 'dfgd', 'dqsdq.fed', 'er', 'web');
-
--- Listage de la structure de table grc. rdvs
-DROP TABLE IF EXISTS `rdvs`;
-CREATE TABLE IF NOT EXISTS `rdvs` (
-  `id_rdv` int unsigned NOT NULL,
-  `num_rdv` int DEFAULT NULL,
-  `date_rdv` date DEFAULT NULL,
-  `compte_rendu` varchar(50) DEFAULT NULL,
-  `id_c` int unsigned DEFAULT NULL,
-  `id_u` int unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_rdv`),
-  KEY `id_c` (`id_c`),
-  KEY `id_u` (`id_u`),
-  CONSTRAINT `FK_rdv_client` FOREIGN KEY (`id_c`) REFERENCES `clients` (`id_client`),
-  CONSTRAINT `FK_rdv_user` FOREIGN KEY (`id_u`) REFERENCES `user` (`id_u`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Listage des données de la table grc.rdvs : ~0 rows (environ)
-DELETE FROM `rdvs`;
-INSERT INTO `rdvs` (`id_rdv`, `num_rdv`, `date_rdv`, `compte_rendu`, `id_c`, `id_u`) VALUES
-	(1, 132, '2022-12-06', 'nice', 1, 1);
-
--- Listage de la structure de table grc. users
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prenom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role` enum('Commercial','Admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Commercial',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Listage des données de la table grc.rdv : ~1 rows (environ)
+INSERT INTO `rdv` (`id`, `date`, `heure`, `compterendu`, `contact`, `commercial`, `created_at`, `updated_at`) VALUES
+	(1, '2022-12-14', '21:15:00', '', NULL, NULL, '2023-01-03 15:15:10', '2023-01-03 21:16:48');
 
 -- Listage des données de la table grc.users : ~1 rows (environ)
-DELETE FROM `users`;
-INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `email_verified_at`, `password`, `remember_token`, `role`, `created_at`, `updated_at`) VALUES
-	(1, 'Shmem', '', 'omz.tlm@gmail.com', NULL, '$2y$10$kaPk4n60AEUe9QrpQqfnFOYRUPw7KfZ487/R1SwJFtfaKQK1W0/NW', NULL, 'Admin', '2022-12-01 20:40:36', '2022-12-01 20:40:36');
+INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(2, 'admin', 'ad', 'admin@gmail.com', NULL, '$2y$10$K8/RacpSoJ2xPc6SbTM/EOg51GKL/jYsyXpcMfy8Z2LZDoj8K2Jte', 'Admin', NULL, '2023-01-15 17:32:28', '2023-01-15 17:32:28');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
