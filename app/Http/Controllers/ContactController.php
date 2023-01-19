@@ -108,7 +108,7 @@ class ContactController extends Controller
         if($request->hasFile('photo')){
         $avatar=$request->file('photo');
         $filename=time() . '.' . $avatar->getClientOriginalExtension();
-        Image::Make($avatar)->resize(300,300)->save(public_path('/telechargement/'. $filename));
+        \Nette\Utils\Image::Make($avatar)->resize(300,300)->save(public_path('/telechargement/'. $filename));
         $ser=Contact::find($id);
         $ser->photo=$filename;
         $ser->save();
