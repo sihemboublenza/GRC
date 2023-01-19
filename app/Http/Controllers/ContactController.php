@@ -28,7 +28,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $contacts = Contact::find($id);
-        return view('admin.contact.show')->with('contacts', $contacts);
+        return view('admin.contact.show')->with(['contacts' => $contacts]);
     }
     public function create()
     {  

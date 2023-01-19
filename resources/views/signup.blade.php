@@ -54,7 +54,7 @@
                                     @if($errors->has('fonction'))
                                     <span class="text-danger">{{ $errors->first('fonction')}} </span>
                                     @endif
-                                    <label for="floatingInputFunction">Last name</label>
+                                    <label for="floatingInputFunction">Function</label>
                                 </div>
                                 <div class="mb-4 form-floating">
                                     <input type="text" class="form-control" name="tel" id="floatingInputTel">

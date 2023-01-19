@@ -28,8 +28,6 @@
                 <input type="email" name="email" class="form-control" value="{{$contacts->email}}" id="floatingInput4" disabled><br>
                 <label for="floatingInput5">Téléphone</label>
                 <input type="tel" name="tel" class="form-control" value="{{$contacts->tel}}" id="floatingInput5" disabled><br>
-                 <label for="floatingInput4">Client</label>
-                <select class="form-control" id="floatingInput5" name="client">
                 <img src="../resources/images/{{$contacts->source}}"><br>
                 <br>
             </div>
