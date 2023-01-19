@@ -18,12 +18,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
 			$table->string('prenom');
-			/* $table->string('fonction')->nullable();
-			 $table->string('tel')->nullable();
-			*/
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->string('photo')->default('default.png');
 			$table->enum('role',  ['Commercial','Admin'])->default('Commercial');
             $table->rememberToken();

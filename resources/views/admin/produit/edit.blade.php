@@ -5,7 +5,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Tables</li>
       <li class="breadcrumb-item">Produits</li>
-      <li class="breadcrumb-item active" aria-current="page">{{$produit->nom}}</li>
+      <li class="breadcrumb-item active" aria-current="page">{{$produits->nom}}</li>
     </ol>
   </div>
 

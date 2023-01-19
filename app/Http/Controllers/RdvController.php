@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Rdv;
 use App\Models\Contact;
+use App\Http\Controllers\AuthenticateController;
 
 class RdvController extends Controller
 {
@@ -19,12 +20,15 @@ class RdvController extends Controller
         return view('admin.rdv.show')->with('rdvs', $rdvs);
     }
     public function create()
-    {   $contact=Contact::all();
+    {   
+        $contact=Contact::all();
         return view('admin.rdv.create')->with('rdv', $contact);
     }
     public function store(Request $request)
     {
         $input = $request->all();
+        $data = AuthenticateController::authentified_user_data();
+        $input['commercial'] = $data['id'];
         Rdv::create($input);
         return redirect('rdv')->with('flash_message', 'Rendez-vous ajouté !');
     }

@@ -21,9 +21,9 @@ return new class extends Migration
         $table->string('nom');
 		$table->string('prenom');
 		$table->string('fonction');
-		$table->string('tel',10);
+		$table->string('tel',12);
         $table->string('email')->unique();
-		$table->string('password');	
+		$table->string('password')->nullable();
         $table->string('photo')->default('/telechargement/default.png');
 		$table->unsignedBigInteger('client')->nullable()->index();
         $table->timestamps();

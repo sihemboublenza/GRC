@@ -22,10 +22,11 @@ class AuthenticateController extends Controller
 
     public static function authentified_user_data()
     {
+        $id = Auth::user()->id;
         $photo = Auth::user()->photo;
         $nom = Auth::user()->nom;
         $prenom = Auth::user()->prenom;
-        return compact('nom', 'prenom', 'photo');
+        return compact('id','nom', 'prenom', 'photo');
     }
 
     public static function isAdmin()

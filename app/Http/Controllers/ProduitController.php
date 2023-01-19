@@ -44,6 +44,10 @@ class ProduitController extends Controller
         if (AuthenticateController::isAdmin())
         {
             $input = $request->all();
+            if(!($input['photo']))
+            {
+                $input['photo'] = 'default.png';
+            }
             Produit::create($input);
             return redirect('produit')->with('flash_message', 'Produit ajouté !');
         }
