@@ -25,15 +25,15 @@
                 <input type="time" name="heure" class="form-control" id="floatingInput2"><br>
                 <label for="floatingInput3">Compte rendu</label>
                 <input type="text" name="etape" class="form-control" id="floatingInput3"><br>
-                          <label for="floatingInput3">Contact</label>
+                <label for="floatingInput3">Contact</label>
                 <select class="form-control" id="floatingInput3" name="contact" required>
-                                      @foreach($rdv as $rd)
-                <option value="{{$rd->date}}">{{$rd->date}}{{$rd->prenom}}</option>
-                                      @endforeach
-                                    </select>
+                @foreach($rdv as $rd)
+                  <option value="{{$rd->id}}">{{$rd->nom}} {{$rd->prenom}}</option>
+                @endforeach
+                </select>
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Ajouter" class="btn btn-success">
+                  <input type="submit" value="Ajouter" class="btn btn-success col-5">
                 </div>
               </form>
             </div>

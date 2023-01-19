@@ -19,12 +19,11 @@ use Image;
 class ContactController extends Controller
 {
     public function index()
-    {
-      
+    {      
         $contacts = Contact::all(); 
-        $client = Client::join('contact','contact.client','=','client.id')
+        $clients = Client::join('contact','contact.client','=','client.id')
             ->get();   
-        return view ('admin.contact.list', ['contacts' => $contacts],['client' => $client]);
+        return view ('admin.contact.list', ['contacts' => $contacts],['clients' => $clients]);
     }
     public function show($id)
     {

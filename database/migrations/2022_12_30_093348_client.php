@@ -20,7 +20,7 @@ return new class extends Migration
 		$table->string('societe');
 		$table->string('tel',10);
 		$table->string('adresse');
-		$table->string('siteweb');
+		$table->string('siteweb')->nullable();
 		$table->unsignedBigInteger('prospect')->nullable()->index();
         $table->timestamps();
 

@@ -13,7 +13,9 @@ class OpportuniteController extends Controller
 {
     public function index()
     {
-        $opportunites = Opportunite::all();
+        $opp = Opportunite::all();
+        $opportunites = Client::join('opportunite','opportunite.client','=','client.id')
+            ->get();   
         return view ('admin.opportunite.list')->with('opportunites', $opportunites);
     }
     public function show($id)

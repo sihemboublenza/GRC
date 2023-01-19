@@ -28,7 +28,7 @@
                 
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Ajouter" class="btn btn-success">
+                  <input type="submit" value="Ajouter" class="btn btn-success col-5">
                 </div>
               </form>
             </div>

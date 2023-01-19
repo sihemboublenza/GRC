@@ -31,9 +31,12 @@
                 <label for="floatingInput4">Email</label>
                 <input type="email" name="email" class="form-control" value="{{$users->email}}" id="floatingInput5"><br>
                 <label for="floatingInput5">Rôle</label>
-                rôle pas fait
+                <select name="role" class="form-control" required>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Admin">Admin</option>
+                </select><br>
                 <div class="col-md-12 text-center">
-                <input type="submit" value="Modifier" class="btn btn-warning">
+                <input type="submit" value="Modifier" class="btn btn-warning col-5">
                 </div>
               </form>
             </div>

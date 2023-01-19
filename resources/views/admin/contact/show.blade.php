@@ -26,8 +26,6 @@
                 <input type="text" name="societe" class="form-control" value="{{$contacts->fonction}}" id="floatingInput3" disabled><br>
                 <label for="floatingInput4">Adresse email</label>
                 <input type="email" name="email" class="form-control" value="{{$contacts->email}}" id="floatingInput4" disabled><br>
-                <label for="floatingInput4">Mot de passe</label>
-                <input type="password" name="password" class="form-control" value="{{$contacts->password}}" id="floatingInput4" disabled><br>
                 <label for="floatingInput5">Téléphone</label>
                 <input type="tel" name="tel" class="form-control" value="{{$contacts->tel}}" id="floatingInput5" disabled><br>
                  <label for="floatingInput4">Client</label>

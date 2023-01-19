@@ -18,7 +18,7 @@ return new class extends Migration
 		$table->id('id');
         $table->date('date');
 		$table->time('heure');		
-		$table->string('compterendu');
+		$table->string('compterendu')->nullable();
 	    $table->unsignedBigInteger('client')->nullable()->index();
 		$table->unsignedBigInteger('commercial')->nullable()->index();
         $table->timestamps(); 
@@ -26,11 +26,11 @@ return new class extends Migration
     });
 	  Schema::table('rdv', function (Blueprint $table) {
 
-            $table->foreign('client')
+            $table->foreign('contact')
 
                   ->references('id')
 
-                  ->on('client')
+                  ->on('contact')
 
                   ->onDelete('cascade')
 

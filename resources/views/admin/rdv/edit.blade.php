@@ -28,7 +28,7 @@
                 <input type="text" name="compterendu" class="form-control" value="{{$rdvs->compterendu}}" id="floatingInput3"><br>
                 <br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" value="Modifier" class="btn btn-warning">
+                  <input type="submit" value="Modifier" class="btn btn-warning col-5">
                 </div>
               </form>
             </div>

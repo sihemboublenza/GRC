@@ -35,7 +35,7 @@
             </thead>
             <tbody>
             <tr>                      
-	            @foreach($contacts as $item)
+	            @foreach($clients as $item)
               <tr>
               <td>{{$item->nom}}</td>
               <td>{{$item->prenom}}</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rdv;
+use App\Models\Contact;
 
 class RdvController extends Controller
 {
@@ -18,8 +19,8 @@ class RdvController extends Controller
         return view('admin.rdv.show')->with('rdvs', $rdvs);
     }
     public function create()
-    {   $rdv=rdv::join('contact','contact.id','=',"rdv.contact")->get();
-        return view('admin.rdv.create',compact('rdv'));
+    {   $contact=Contact::all();
+        return view('admin.rdv.create')->with('rdv', $contact);
     }
     public function store(Request $request)
     {

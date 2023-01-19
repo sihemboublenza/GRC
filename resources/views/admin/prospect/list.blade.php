@@ -28,10 +28,10 @@
                 <th>Prénom</th>
                 <th>Société</th>
                 <th>Fonction</th>
-              
                 <th>Statut</th>
                 <th/>
                 <th>Actions</th>
+                <th/>
                 <th/>
               </tr>
             </thead>
@@ -43,11 +43,10 @@
               <td>{{$item->prenom}}</td>
               <td>{{$item->societe}}</td>
               <td>{{$item->fonction}}</td>
-             
               <td>{{$item->statut}}</td>
               <td><a href="{{ url('/prospect/' . $item->id) }}" class="btn btn-sm btn-primary">Détails</a></td>
               <td><a href="{{ url('/prospect/' . $item->id . '/edit/') }}" class="btn btn-sm btn-warning">Modifier</a></td>
-              <td><a href="{{ url('/prospect/' . $item->id  . '/transforme/') }}" class="btn btn-info">transforme</a></td>
+              <td><a href="{{ url('/prospect/' . $item->id  . '/transforme/') }}" class="btn btn-info btn-sm">Transformer</a></td>
               <td><form method="POST" action="{{ url('/prospect' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                       {{ method_field('DELETE') }}
                       {{ csrf_field() }}
