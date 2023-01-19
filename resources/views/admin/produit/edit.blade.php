@@ -33,7 +33,7 @@
                 <label for="floatingInput5">Quantité</label>
                 <input type="tel" name="quantite" class="form-control" value="{{$produits->quantite}}" id="floatingInput6"><br>
                 <div class="col-md-12 text-center">
-                <input type="submit" value="Modifier" class="btn btn-warning">
+                <input type="submit" value="Modifier" class="btn btn-warning col-5">
                 </div>
               </form>
             </div>
